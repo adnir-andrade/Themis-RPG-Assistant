@@ -1,6 +1,6 @@
 # GitHub Pages
 
-<https://utfpr-gp.github.io/roubank/](https://github.com/AdnirAndrade/Themis-RPG-Assistant>
+<https://github.com/AdnirAndrade/Themis-RPG-Assistant>
 
 # Checkist
 
