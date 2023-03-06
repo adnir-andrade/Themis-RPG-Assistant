@@ -1,6 +1,6 @@
 # GitHub Pages
 
-<https://github.com/AdnirAndrade/Themis-RPG-Assistant>
+<https://github.com/adnir-andrade/Themis-RPG-Assistant>
 
 # Checkist
 
