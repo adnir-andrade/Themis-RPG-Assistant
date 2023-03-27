@@ -1,0 +1,45 @@
+/* background */
+body {
+  position: relative;
+  width: 360px;
+  height: 800px;
+
+  /* Background */
+
+  background: url(/assets/img/paper-1074136_960_720.jpg);
+  background-size: cover;
+
+  font-family: "Cinzel Decorative", cursive;
+}
+
+/* Rectangle 581 */
+.gradient {
+  position: absolute;
+  width: 360px;
+  height: 126px;
+  left: 360px;
+
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  background-blend-mode: overlay;
+}
+
+.rectangle {
+  height: 150px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: rotate(180deg);
+}
+
+.rectangleInverted {
+  height: 150px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+nav {
+  background-color: #000000;
+}
