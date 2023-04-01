@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Themis Project - A DM Best Friend</title>
+    <title>Themys Project - Select a Table</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -91,23 +91,62 @@
     </header>
 
     <main>
-      <div class="d-flex justify-content-center align-items-center container">
-        <a href="sign-in.html">
-          <button type="button" class="btn btn-dark btn-lg mb-4 themys-button">
-            Sign In
-          </button>
-        </a>
-        <a href="log-in.html">
-          <button type="button" class="btn btn-dark btn-lg themys-button">
-            Log In
-          </button>
-        </a>
+      <div class="position-relative d-flex flex-column mb-3 align-items-center">
+        <div class="t-mb6">
+          <h1
+            class="position-absolute top-0 start-50 translate-middle my-5 themys-font"
+          >
+            Select A Table
+          </h1>
+        </div>
+
+        <div class="transp-bg">
+          <div class="my-4 p-2">
+            <div class="d-flex flex-column mb-3 align-items-center">
+              <div class="p-3">
+                <button
+                  type="submit"
+                  class="btn btn-dark themys-button themys-button-transp"
+                >
+                  Table 1
+                </button>
+              </div>
+              <div class="p-3">
+                <button
+                  type="submit"
+                  class="btn btn-dark themys-button themys-button-transp"
+                >
+                  Table 2
+                </button>
+              </div>
+              <div class="p-3">
+                <button
+                  type="submit"
+                  class="btn btn-dark themys-button themys-button-transp"
+                >
+                  Table 3
+                </button>
+              </div>
+            </div>
+            <div
+              class="d-flex flex-row mb-3 align-items-center justify-content-evenly"
+            >
+              <div class="p-2 semi-transp"><img src="icons/sort.svg" /></div>
+              <div class="p-2 semi-transp"><img src="icons/add.svg" /></div>
+              <div class="p-2 semi-transp">
+                <img src="icons/settings.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 
     <footer>
-      <div class="gradient rectangleInverted"></div>
+      <div class="test">
+        <div class="gradient rectangleInverted"></div>
+      </div>
+      <div class="t-mb5"></div>
     </footer>
-    <script></script>
   </body>
 </html>
