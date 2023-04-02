@@ -13,7 +13,6 @@ body {
   position: absolute;
   width: 360px;
   height: 126px;
-  left: 360px;
 
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
   mix-blend-mode: overlay;
@@ -73,7 +72,7 @@ nav {
   text-shadow: 0.935484px 1.87097px 0.935484px rgba(0, 0, 0, 0.25);
 }
 
-.themys-font {
+.themys-font-bold {
   font-style: normal;
   font-weight: 700;
   font-size: 28px;
@@ -84,6 +83,12 @@ nav {
   color: #cfbe86;
 
   text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.7);
+}
+
+.themys-dropdown-font {
+  color: #3b3634;
+
+  text-shadow: 1.81579px 3.63158px 2.72368px rgba(0, 0, 0, 0.5);
 }
 
 .themys-button-transp {
@@ -135,6 +140,41 @@ nav {
   margin-bottom: 5em;
 }
 
-.test {
-  /* mix-blend-mode: multiply; */
+.t-mt1 {
+  margin-top: 1em;
+}
+
+.title {
+  width: 100%;
+}
+
+.themys-font {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #cfbe86;
+
+  text-shadow: 1.81579px 3.63158px 2.72368px rgba(0, 0, 0, 0.75);
+}
+
+.align-left {
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.align-right {
+  text-align: right;
+  margin-bottom: 5px;
+}
+
+select {
+  width: 100%;
+}
+
+.character-form {
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  padding-top: 1em;
 }
