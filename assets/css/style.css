@@ -178,3 +178,7 @@ select {
   padding-bottom: 1em;
   padding-top: 1em;
 }
+
+.switch-adjust {
+  padding-top: 2px;
+}
