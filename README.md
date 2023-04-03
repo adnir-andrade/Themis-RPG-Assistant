@@ -2,6 +2,7 @@
 
 <https://github.com/adnir-andrade/Themis-RPG-Assistant>
 
+[Figma Prototype](https://pages.github.com/](https://www.figma.com/proto/SrQJozaia8PIFqpcG9C8YB/Themis?node-id=29-132&scaling=scale-down&page-id=0%3A1))
 <https://www.figma.com/proto/SrQJozaia8PIFqpcG9C8YB/Themis?node-id=29-132&scaling=scale-down&page-id=0%3A1>
 
 # Checkist
