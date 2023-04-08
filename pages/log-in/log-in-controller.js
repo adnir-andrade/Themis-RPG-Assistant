@@ -6,6 +6,11 @@ form.addEventListener("submit", (event) => {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
+  if (!validateEmail(email) ?? false) {
+    window.alert("Please, insert a valid e-mail address.");
+    return;
+  }
+
   if (!validatePassword(password)) {
     window.alert("Please, insert a valid password.");
     return;
