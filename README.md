@@ -26,7 +26,7 @@ Funções
 - [x] Função com nome
 - [ ] Função aninhada/local - declarar uma função dentro de outra
 - [ ] Passagem de uma função como parâmetro
-- [ ] Função Flecha - Arrow Function
+- [x] Função Flecha - Arrow Function
 
 Eventos
 
@@ -50,7 +50,7 @@ Tratadores de Evento
 - [ ] Especificar o tratador de evento inline
 - [ ] Especificar o tratador de evento no carregamento da página HTML no modo tradicional - no onload
 - [ ] Especificar o tratador de evento no carregamento da página HTML com a função addEventListener - no onload
-- [ ] Usar o operador this em funções tratadoras de eventos.
+- [x] Usar o operador this em funções tratadoras de eventos.
 
 Objetos Nativos
 
@@ -61,9 +61,9 @@ Objetos Nativos
 
 Objetos
 
-- [ ] Criar objeto usando função construtora ou notação literal
-- [ ] Criar objetos a partir da definição de classes do ES6
-- [ ] Usar herança prototipal nativa ou herança de classes do ES6
+- [x] Criar objeto usando função construtora ou notação literal
+- [x] Criar objetos a partir da definição de classes do ES6
+- [x] Usar herança prototipal nativa ou herança de classes do ES6
 
 Qualidade do código
 
@@ -72,8 +72,8 @@ Qualidade do código
 - [ ] Usar strict mode
 - [ ] Usar Module Pattern
 - [ ] Usar pasta assets e subpastas resources e libraries para organizar o código
-- [ ] Usar let ou const ao invés de var
-- [ ] Nomes de arquivos minúsculos e separados por hífen (dashed-case)
+- [x] Usar let ou const ao invés de var
+- [x] Nomes de arquivos minúsculos e separados por hífen (dashed-case)
 
 Formulário
 
