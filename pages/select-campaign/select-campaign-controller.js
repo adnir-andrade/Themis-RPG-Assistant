@@ -9,36 +9,72 @@ customButtons.forEach((button) => {
   });
 });
 
-// Adding a new table
+customButtons.forEach((button) => {
+  button.addEventListener("mouseout", () => {
+    button.style.mixBlendMode = "";
+    button.style.background = "";
+  });
+});
 
+// Adding a new table
 class CampaignManager {
   constructor() {
     this.tableHolder = document.getElementsByName("table-holder");
+    this.addButton = document.getElementById("add");
+    this.newDiv;
+    this.newButton;
+  }
+
+  init() {
+    this.addCampaign();
+  }
+
+  addCampaign() {
+    this.addButton.addEventListener("click", () => {
+      this.createNewDiv();
+      this.createNewButton();
+      this.nameButton(this.requestName());
+      this.appendElements();
+    });
   }
 
   createNewDiv() {
-    const newDiv = document.createElement("div");
-    newDiv.classList.add("p-3");
+    this.newDiv = document.createElement("div");
+    this.newDiv.classList.add("p-3");
+  }
+
+  createNewButton() {
+    this.newButton = document.createElement("button");
+    this.newButton.type = "submit";
+    this.newButton.classList.add(
+      "btn",
+      "btn-dark",
+      "themys-button",
+      "themys-button-transp"
+    );
+  }
+
+  requestName() {
+    return prompt("What shall be the name of your new Campaign?");
+  }
+
+  nameButton(campaignName) {
+    this.newButton.textContent = this.formatString(campaignName);
+  }
+
+  appendElements() {
+    this.newDiv.appendChild(this.newButton);
+    this.tableHolder[0].appendChild(this.newDiv);
+  }
+
+  formatString(str) {
+    const lower = str.toLowerCase();
+    const first = lower.slice(0, 1).toUpperCase();
+    const last = lower.slice(-1).toUpperCase();
+    const middle = lower.slice(1, -1);
+    return first.concat(middle, last);
   }
 }
 
-tableHolder.forEach((element) => {
-  console.log(element);
-});
-
-// Crie um novo elemento div
-
-// Crie um novo elemento botão
-const newButton = document.createElement("button");
-newButton.type = "submit";
-newButton.classList.add(
-  "btn",
-  "btn-dark",
-  "themys-button",
-  "themys-button-transp"
-);
-
-newButton.textContent = "CHANGE THIS";
-
-newDiv.appendChild(newButton);
-tableHolder[0].appendChild(newDiv);
+const test = new CampaignManager();
+test.init();
