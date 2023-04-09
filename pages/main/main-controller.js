@@ -9,7 +9,7 @@ function showLogo() {
       console.log("count: " + count);
       logoImg.style.opacity = count * 0.01;
       count++;
-      if (count > 50) clearInterval(intervalId);
+      if (count > 80) clearInterval(intervalId);
     }, 30);
   };
 

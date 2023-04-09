@@ -21,6 +21,7 @@ class CampaignManager {
   constructor() {
     this.tableHolder = document.getElementsByName("table-holder");
     this.addButton = document.getElementById("add");
+    this.sortButton = document.getElementById("sort");
     this.newDiv;
     this.newButton;
     this.campaigns = [];
@@ -28,6 +29,10 @@ class CampaignManager {
 
   init() {
     this.addCampaign();
+
+    this.sortButton.addEventListener("click", () => {
+      this.updateButtonContent();
+    });
   }
 
   addCampaign() {
@@ -92,6 +97,15 @@ class CampaignManager {
     const last = lower.slice(-1).toUpperCase();
     const middle = lower.slice(1, -1);
     return first.concat(middle, last);
+  }
+
+  updateButtonContent() {
+    const buttons = document.querySelectorAll(".themys-button");
+
+    const sortedCampaigns = this.campaigns.sort();
+    buttons.forEach((button, index) => {
+      button.textContent = this.formatString(sortedCampaigns[index]);
+    });
   }
 }
 
