@@ -79,7 +79,15 @@ class CampaignManager {
   }
 
   nameButton(campaignName) {
-    this.newButton.textContent = this.formatString(campaignName);
+    const formatString = (str) => {
+      const lower = str.toLowerCase();
+      const first = lower.slice(0, 1).toUpperCase();
+      const last = lower.slice(-1).toUpperCase();
+      const middle = lower.slice(1, -1);
+      return first.concat(middle, last);
+    };
+
+    this.newButton.textContent = formatString(campaignName);
   }
 
   appendElements() {
@@ -91,20 +99,28 @@ class CampaignManager {
     this.campaigns.push(campaignName);
   }
 
-  formatString(str) {
-    const lower = str.toLowerCase();
-    const first = lower.slice(0, 1).toUpperCase();
-    const last = lower.slice(-1).toUpperCase();
-    const middle = lower.slice(1, -1);
-    return first.concat(middle, last);
-  }
+  // formatString(str) {
+  //   const lower = str.toLowerCase();
+  //   const first = lower.slice(0, 1).toUpperCase();
+  //   const last = lower.slice(-1).toUpperCase();
+  //   const middle = lower.slice(1, -1);
+  //   return first.concat(middle, last);
+  // }
 
   updateButtonContent() {
     const buttons = document.querySelectorAll(".themys-button");
 
+    const formatString = (str) => {
+      const lower = str.toLowerCase();
+      const first = lower.slice(0, 1).toUpperCase();
+      const last = lower.slice(-1).toUpperCase();
+      const middle = lower.slice(1, -1);
+      return first.concat(middle, last);
+    };
+
     const sortedCampaigns = this.campaigns.sort();
     buttons.forEach((button, index) => {
-      button.textContent = this.formatString(sortedCampaigns[index]);
+      button.textContent = formatString(sortedCampaigns[index]);
     });
   }
 }
