@@ -2,8 +2,8 @@ const char1 = document.getElementById("char-1");
 const originalPosition = char1.offsetLeft;
 const newPosition = (function () {
   const x = originalPosition;
-  const y = originalPosition * 0.4;
-  return x - y;
+  const offset = 0.4;
+  return x - x * offset;
 })();
 
 let flag = 1;
