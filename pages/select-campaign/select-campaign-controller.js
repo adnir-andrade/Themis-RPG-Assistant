@@ -11,21 +11,22 @@ customButtons.forEach((button) => {
 
 // Adding a new table
 
-// Class tableHolder() {
-//     constructor() {
+class CampaignManager {
+  constructor() {
+    this.tableHolder = document.getElementsByName("table-holder");
+  }
 
-//     }
-// }
-
-const tableHolder = document.getElementsByName("table-holder");
+  createNewDiv() {
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("p-3");
+  }
+}
 
 tableHolder.forEach((element) => {
   console.log(element);
 });
 
 // Crie um novo elemento div
-const newDiv = document.createElement("div");
-newDiv.classList.add("p-3");
 
 // Crie um novo elemento botão
 const newButton = document.createElement("button");

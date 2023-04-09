@@ -49,7 +49,7 @@ class FormValidator {
   };
 
   redirectTo() {
-    window.location.href = "/pages/select-table/select-table.html";
+    window.location.href = "/pages/select-campaign/select-campaign.html";
   }
 }
 
