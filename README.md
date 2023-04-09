@@ -14,7 +14,7 @@ Caixas de Diálogo
 
 Temporizadores
 
-- [ ] setInterval
+- [x] setInterval
 - [ ] setTimeout
 
 Funções
@@ -42,13 +42,13 @@ Acesso aos elementos DOM do HTML
 - [ ] Via referência DOM pelo id do elemento HTML
 - [x] Via getElementByID()
 - [x] Via getElementsByName()
-- [ ] Via getElementsByTagName()
+- [x] Via getElementsByTagName()
 - [x] Via seletores CSS usados na função querySelector() ou querySelectorAll()
 
 Tratadores de Evento
 
 - [x] Especificar o tratador de evento inline
-- [ ] Especificar o tratador de evento no carregamento da página HTML no modo tradicional - no onload
+- [x] Especificar o tratador de evento no carregamento da página HTML no modo tradicional - no onload
 - [ ] Especificar o tratador de evento no carregamento da página HTML com a função addEventListener - no onload
 - [x] Usar o operador this em funções tratadoras de eventos.
 
@@ -57,7 +57,7 @@ Objetos Nativos
 - [ ] Usar pelo menos 3 métodos de manipulação de array
 - [x] Usar laço de repetição (for..in ou for..of ou forEach)
 - [x] Usar pelo menos 3 métodos para manipulação de string
-- [ ] String Template
+- [x] String Template
 
 Objetos
 
