@@ -55,12 +55,6 @@ class FormValidator {
 
 const formsUtils = {
   FormValidator,
-  // init,
-  // validateForm,
-  // validatePasswordLength,
-  // verifyEmail,
-  // isFormatValid,
-  // redirectTo,
 };
 
 export default formsUtils;

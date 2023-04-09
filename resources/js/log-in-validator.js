@@ -17,7 +17,6 @@ class LogInValidator extends formsUtils.FormValidator {
 
 const logInUtils = {
   LogInValidator,
-  // verifyPassword,
 };
 
 export default logInUtils;

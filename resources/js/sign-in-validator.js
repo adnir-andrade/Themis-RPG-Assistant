@@ -1,6 +1,6 @@
-import FormValidator from "./base-form-validator.js";
+import formsUtils from "./base-form-validator.js";
 
-class SignInValidator extends FormValidator {
+class SignInValidator extends formsUtils.FormValidator {
   constructor() {
     super();
     this.confirmPassword = document.getElementById("confirmPassword").value;
@@ -8,14 +8,14 @@ class SignInValidator extends FormValidator {
 
   verifyPassword() {
     if (
-      !validatePasswordLength(password) ||
-      !validatePasswordLength(confirmPassword)
+      !super.validatePasswordLength(password) ||
+      !super.validatePasswordLength(confirmPassword)
     ) {
       window.alert("Please, insert a password with at least 8 characters.");
       return false;
     }
 
-    if (!doPasswordMatch()) {
+    if (!this.doPasswordMatch(password, confirmPassword)) {
       window.alert("Password does not match. Please, try again.");
       return false;
     }
@@ -23,17 +23,15 @@ class SignInValidator extends FormValidator {
     return true;
   }
 
-  doPasswordMatch() {
-    if (password === confirmPassword) return true;
-
-    return false;
+  doPasswordMatch(password, confirmPassword) {
+    console.log(password);
+    console.log(confirmPassword);
+    return this.password === this.confirmPassword;
   }
 }
 
-const signInValidator = {
+const signInUtils = {
   SignInValidator,
-  // verifyPassword,
-  // doPasswordMatch,
 };
 
-export default signInValidator;
+export default signInUtils;
