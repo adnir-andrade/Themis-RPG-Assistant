@@ -68,6 +68,7 @@ nav {
   text-align: center;
 
   color: #cfbe86;
+  z-index: 1;
 
   text-shadow: 0.935484px 1.87097px 0.935484px rgba(0, 0, 0, 0.25);
 }
