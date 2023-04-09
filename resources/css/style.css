@@ -190,10 +190,4 @@ select {
 
 .custom-button:hover {
   opacity: 100%;
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgba(255, 255, 255, 0) 70%
-  );
-  border: 5px solid rgba(0, 0, 0, 0);
 }
