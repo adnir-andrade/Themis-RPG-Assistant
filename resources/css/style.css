@@ -199,3 +199,7 @@ select {
   z-index: -1;
   mix-blend-mode: color-burn;
 }
+
+.multiclass-field:disabled {
+  opacity: 35%;
+}

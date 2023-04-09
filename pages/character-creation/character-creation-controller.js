@@ -1,4 +1,13 @@
 // The code is purposely disorganized to comply with the activity's requirements
+// Adding Listener onload
+window.addEventListener("load", function () {
+  document.getElementById("multiclass").addEventListener("change", function () {
+    var multiclassFields = document.querySelectorAll(".multiclass-field");
+    for (var i = 0; i < multiclassFields.length; i++) {
+      multiclassFields[i].disabled = !this.checked;
+    }
+  });
+});
 
 // Sorting alphabetically
 const races = ["Human", "Dwarf", "Elf", "Orc", "Malit", "Ramadriin"];
