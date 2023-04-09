@@ -10,7 +10,18 @@ customButtons.forEach((button) => {
 });
 
 // Adding a new table
-const parentElement = document.getElementById("parent-element");
+
+// Class tableHolder() {
+//     constructor() {
+
+//     }
+// }
+
+const tableHolder = document.getElementsByName("table-holder");
+
+tableHolder.forEach((element) => {
+  console.log(element);
+});
 
 // Crie um novo elemento div
 const newDiv = document.createElement("div");
@@ -25,10 +36,8 @@ newButton.classList.add(
   "themys-button",
   "themys-button-transp"
 );
-newButton.textContent = "Table 2";
 
-// Adicione o botão à div
+newButton.textContent = "CHANGE THIS";
+
 newDiv.appendChild(newButton);
-
-// Adicione a nova div ao elemento pai
-parentElement.appendChild(newDiv);
+tableHolder[0].appendChild(newDiv);
