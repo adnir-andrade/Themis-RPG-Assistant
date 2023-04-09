@@ -55,7 +55,19 @@ class CampaignManager {
   }
 
   requestName() {
-    return prompt("What shall be the name of your new Campaign?");
+    let isDecided = false;
+    let campaignName = "";
+
+    do {
+      campaignName = prompt("What shall be the name of your new Campaign?");
+
+      isDecided = confirm(
+        `Are you sure want to name it ${campaignName}?`,
+        "Yes, No"
+      );
+    } while (!isDecided);
+
+    return campaignName;
   }
 
   nameButton(campaignName) {

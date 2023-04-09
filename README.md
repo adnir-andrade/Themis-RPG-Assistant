@@ -8,9 +8,9 @@
 
 Caixas de Diálogo
 
-- [ ] prompt
+- [x] prompt
 - [x] alert
-- [ ] confirm
+- [x] confirm
 
 Temporizadores
 
