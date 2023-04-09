@@ -23,6 +23,7 @@ class CampaignManager {
     this.addButton = document.getElementById("add");
     this.newDiv;
     this.newButton;
+    this.campaigns = [];
   }
 
   init() {
@@ -33,7 +34,9 @@ class CampaignManager {
     this.addButton.addEventListener("click", () => {
       this.createNewDiv();
       this.createNewButton();
-      this.nameButton(this.requestName());
+      const campaignName = this.requestName();
+      this.pushCampaing(campaignName);
+      this.nameButton(campaignName);
       this.appendElements();
     });
   }
@@ -77,6 +80,10 @@ class CampaignManager {
   appendElements() {
     this.newDiv.appendChild(this.newButton);
     this.tableHolder[0].appendChild(this.newDiv);
+  }
+
+  pushCampaing(campaignName) {
+    this.campaigns.push(campaignName);
   }
 
   formatString(str) {

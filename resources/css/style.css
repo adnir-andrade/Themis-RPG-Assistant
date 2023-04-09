@@ -203,3 +203,15 @@ select {
 .multiclass-field:disabled {
   opacity: 35%;
 }
+
+.character-name-input {
+  background-color: transparent;
+  border: none;
+  box-shadow: 0px 4px 4px #cfbe86(0, 0, 0, 0.5);
+  transition: width 0.2s ease-in-out;
+  transition: font-size 0.5s ease-in-out;
+}
+
+.character-name-input::focus {
+  border: none;
+}

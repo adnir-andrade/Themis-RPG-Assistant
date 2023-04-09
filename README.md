@@ -22,7 +22,7 @@ Funções
 - [x] Função anônima com argumento
 - [x] Função anônima sem argumento
 - [ ] Função anônima com retorno
-- [ ] Função auto-executável
+- [x] Função auto-executável
 - [x] Função com nome
 - [ ] Função aninhada/local - declarar uma função dentro de outra
 - [x] Passagem de uma função como parâmetro
@@ -32,8 +32,8 @@ Eventos
 
 - [x] Evento de carregamento do documento - onload
 - [x] Evento de movimento do mouse
-- [ ] Evento de teclado - usar charCode ou keyCode
-- [ ] Eventos de formulário - onfocus e onblur
+- [x] Evento de teclado - usar charCode ou keyCode
+- [x] Eventos de formulário - onfocus e onblur
 - [ ] Imprimir alguma propriedade do objeto event recebido como parâmetro
 - [ ] Propagação de eventos no modelo bolha (usar target e currentTarget, ou seja, disparar o evento em um elemento filho e capturar em um elemento pai)
 

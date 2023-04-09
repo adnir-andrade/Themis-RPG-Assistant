@@ -15,7 +15,3 @@ function showLogo() {
 
   logoTimer();
 }
-
-//   setTimeout(function () {
-//     console.log("Stopped interval");
-//   }, 1000);
