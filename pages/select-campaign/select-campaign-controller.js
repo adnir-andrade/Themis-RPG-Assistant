@@ -88,5 +88,5 @@ class CampaignManager {
   }
 }
 
-const test = new CampaignManager();
-test.init();
+const campaignManager = new CampaignManager();
+campaignManager.init();
