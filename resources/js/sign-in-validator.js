@@ -15,7 +15,7 @@ class SignInValidator extends formsUtils.FormValidator {
       return false;
     }
 
-    if (!this.doPasswordMatch(password, confirmPassword)) {
+    if (!this.doPasswordMatch(password.value, confirmPassword.value)) {
       window.alert("Password does not match. Please, try again.");
       return false;
     }
@@ -24,9 +24,7 @@ class SignInValidator extends formsUtils.FormValidator {
   }
 
   doPasswordMatch(password, confirmPassword) {
-    console.log(password);
-    console.log(confirmPassword);
-    return this.password === this.confirmPassword;
+    return password === confirmPassword;
   }
 }
 
