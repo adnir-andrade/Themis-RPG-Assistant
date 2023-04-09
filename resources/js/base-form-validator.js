@@ -9,6 +9,7 @@ class FormValidator {
   init() {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
+      window.alert("A " + event.type + " was initiated.");
       this.validateForm();
     });
   }
