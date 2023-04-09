@@ -215,3 +215,7 @@ select {
 .character-name-input::focus {
   border: none;
 }
+/* 
+.button-slider {
+  transition: left 1s ease-in-out;
+} */
