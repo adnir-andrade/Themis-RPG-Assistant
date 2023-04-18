@@ -108,82 +108,279 @@
         </div>
       </div>
 
-      <div class="position-relative d-flex flex-column mb-3 align-items-center">
-        <div class="transp-bg character-form">
-          <div class="mb-2 p-2">
-            <p class="themys-font align-left">Character Level</p>
-            <select class="themys-dropdown-font" id="character-dropdown">
-              <option value="" disabled selected>Level</option>
-            </select>
-          </div>
-
-          <div class="mb-2 p-2">
-            <p class="themys-font align-left">Race</p>
-            <select class="themys-dropdown-font" id="race-dropdown">
-              <option value="" disabled selected>Race</option>
-            </select>
-          </div>
-
-          <div class="mb-2 p-2">
-            <p class="themys-font align-left">Class</p>
-            <select class="themys-dropdown-font">
-              <option value="" disabled selected>1st Class</option>
-              <option value="1">Warrior</option>
-              <option value="2">Mage</option>
-              <option value="3">Hunter</option>
-              <option value="4">Assassin</option>
-              <option value="5">Cleric</option>
-              <option value="6">Barbarian</option>
-            </select>
-          </div>
-
-          <div class="mb-2 p-2">
-            <p class="themys-font align-left">Class Level</p>
-            <select class="themys-dropdown-font" id="level-dropdown">
-              <option value="" disabled selected>Level</option>
-            </select>
-          </div>
-
-          <div class="form-check form-switch themys-font float-end p-1">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              role="switch"
-              id="multiclass"
-            />
-            <label class="form-check-label switch-adjust" for="multiclass"
-              >MultiClass</label
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div
+              class="position-relative d-flex flex-column mb-3 align-items-center"
             >
-          </div>
+              <div class="transp-bg character-form">
+                <div class="mb-2 p-2">
+                  <p class="themys-font align-left">Character Level</p>
+                  <select class="themys-dropdown-font" id="character-dropdown">
+                    <option value="" disabled selected>Level</option>
+                  </select>
+                </div>
 
-          <div class="mb-2 p-2">
-            <p class="themys-font align-left">2nd Class</p>
-            <select class="themys-dropdown-font multiclass-field" disabled>
-              <option value="" disabled selected>2st Class</option>
-              <option value="1">Warrior</option>
-              <option value="2">Mage</option>
-              <option value="3">Hunter</option>
-              <option value="4">Assassin</option>
-              <option value="5">Cleric</option>
-              <option value="6">Barbarian</option>
-            </select>
-          </div>
+                <div class="mb-2 p-2">
+                  <p class="themys-font align-left">Race</p>
+                  <select class="themys-dropdown-font" id="race-dropdown">
+                    <option value="" disabled selected>Race</option>
+                  </select>
+                </div>
 
-          <div class="mb-2 p-2">
-            <p class="themys-font align-left">2nd Class Level</p>
-            <select
-              class="themys-dropdown-font multiclass-field"
-              id="thisIsTotallyNotRecommended"
-              disabled
+                <div class="mb-2 p-2">
+                  <p class="themys-font align-left">Class</p>
+                  <select class="themys-dropdown-font">
+                    <option value="" disabled selected>1st Class</option>
+                    <option value="1">Warrior</option>
+                    <option value="2">Mage</option>
+                    <option value="3">Hunter</option>
+                    <option value="4">Assassin</option>
+                    <option value="5">Cleric</option>
+                    <option value="6">Barbarian</option>
+                  </select>
+                </div>
+
+                <div class="mb-2 p-2">
+                  <p class="themys-font align-left">Class Level</p>
+                  <select class="themys-dropdown-font" id="level-dropdown">
+                    <option value="" disabled selected>Level</option>
+                  </select>
+                </div>
+
+                <div class="form-check form-switch themys-font float-end p-1">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="multiclass"
+                  />
+                  <label class="form-check-label switch-adjust" for="multiclass"
+                    >MultiClass</label
+                  >
+                </div>
+
+                <div class="mb-2 p-2">
+                  <p class="themys-font align-left">2nd Class</p>
+                  <select
+                    class="themys-dropdown-font multiclass-field"
+                    disabled
+                  >
+                    <option value="" disabled selected>2st Class</option>
+                    <option value="1">Warrior</option>
+                    <option value="2">Mage</option>
+                    <option value="3">Hunter</option>
+                    <option value="4">Assassin</option>
+                    <option value="5">Cleric</option>
+                    <option value="6">Barbarian</option>
+                  </select>
+                </div>
+
+                <div class="mb-2 p-2">
+                  <p class="themys-font align-left">2nd Class Level</p>
+                  <select
+                    class="themys-dropdown-font multiclass-field"
+                    id="thisIsTotallyNotRecommended"
+                    disabled
+                  >
+                    <option value="" disabled selected>Level</option>
+                  </select>
+                </div>
+
+                <div class="align-right">
+                  <img src="/resources/icons/chevrons-right.svg" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div
+              class="position-relative d-flex flex-column mb-3 align-items-center"
             >
-              <option value="" disabled selected>Level</option>
-            </select>
-          </div>
+              <div class="transp-bg character-form">
+                <div class="mb-2 p-2">
+                  <p class="themys-font align-left">SECOND SCREEN</p>
+                  <select class="themys-dropdown-font" id="character-dropdown">
+                    <option value="" disabled selected>Level</option>
+                  </select>
+                </div>
 
-          <div class="align-right">
-            <img src="/resources/icons/chevrons-right.svg" />
+                <div class="mb-2 p-2">
+                  <p class="themys-font align-left">Race</p>
+                  <select class="themys-dropdown-font" id="race-dropdown">
+                    <option value="" disabled selected>Race</option>
+                  </select>
+                </div>
+
+                <div class="mb-2 p-2">
+                  <p class="themys-font align-left">Class</p>
+                  <select class="themys-dropdown-font">
+                    <option value="" disabled selected>1st Class</option>
+                    <option value="1">Warrior</option>
+                    <option value="2">Mage</option>
+                    <option value="3">Hunter</option>
+                    <option value="4">Assassin</option>
+                    <option value="5">Cleric</option>
+                    <option value="6">Barbarian</option>
+                  </select>
+                </div>
+
+                <div class="mb-2 p-2">
+                  <p class="themys-font align-left">Class Level</p>
+                  <select class="themys-dropdown-font" id="level-dropdown">
+                    <option value="" disabled selected>Level</option>
+                  </select>
+                </div>
+
+                <div class="form-check form-switch themys-font float-end p-1">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="multiclass"
+                  />
+                  <label class="form-check-label switch-adjust" for="multiclass"
+                    >MultiClass</label
+                  >
+                </div>
+
+                <div class="mb-2 p-2">
+                  <p class="themys-font align-left">2nd Class</p>
+                  <select
+                    class="themys-dropdown-font multiclass-field"
+                    disabled
+                  >
+                    <option value="" disabled selected>2st Class</option>
+                    <option value="1">Warrior</option>
+                    <option value="2">Mage</option>
+                    <option value="3">Hunter</option>
+                    <option value="4">Assassin</option>
+                    <option value="5">Cleric</option>
+                    <option value="6">Barbarian</option>
+                  </select>
+                </div>
+
+                <div class="mb-2 p-2">
+                  <p class="themys-font align-left">2nd Class Level</p>
+                  <select
+                    class="themys-dropdown-font multiclass-field"
+                    id="thisIsTotallyNotRecommended"
+                    disabled
+                  >
+                    <option value="" disabled selected>Level</option>
+                  </select>
+                </div>
+
+                <div class="align-right">
+                  <img src="/resources/icons/chevrons-right.svg" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div
+              class="position-relative d-flex flex-column mb-3 align-items-center"
+            >
+              <div class="transp-bg character-form">
+                <div class="mb-2 p-2">
+                  <p class="themys-font align-left">Character Level</p>
+                  <select class="themys-dropdown-font" id="character-dropdown">
+                    <option value="" disabled selected>Level</option>
+                  </select>
+                </div>
+
+                <div class="mb-2 p-2">
+                  <p class="themys-font align-left">Race</p>
+                  <select class="themys-dropdown-font" id="race-dropdown">
+                    <option value="" disabled selected>Race</option>
+                  </select>
+                </div>
+
+                <div class="mb-2 p-2">
+                  <p class="themys-font align-left">Class</p>
+                  <select class="themys-dropdown-font">
+                    <option value="" disabled selected>1st Class</option>
+                    <option value="1">Warrior</option>
+                    <option value="2">Mage</option>
+                    <option value="3">Hunter</option>
+                    <option value="4">Assassin</option>
+                    <option value="5">Cleric</option>
+                    <option value="6">Barbarian</option>
+                  </select>
+                </div>
+
+                <div class="mb-2 p-2">
+                  <p class="themys-font align-left">Class Level</p>
+                  <select class="themys-dropdown-font" id="level-dropdown">
+                    <option value="" disabled selected>Level</option>
+                  </select>
+                </div>
+
+                <div class="form-check form-switch themys-font float-end p-1">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="multiclass"
+                  />
+                  <label class="form-check-label switch-adjust" for="multiclass"
+                    >MultiClass</label
+                  >
+                </div>
+
+                <div class="mb-2 p-2">
+                  <p class="themys-font align-left">2nd Class</p>
+                  <select
+                    class="themys-dropdown-font multiclass-field"
+                    disabled
+                  >
+                    <option value="" disabled selected>2st Class</option>
+                    <option value="1">Warrior</option>
+                    <option value="2">Mage</option>
+                    <option value="3">Hunter</option>
+                    <option value="4">Assassin</option>
+                    <option value="5">Cleric</option>
+                    <option value="6">Barbarian</option>
+                  </select>
+                </div>
+
+                <div class="mb-2 p-2">
+                  <p class="themys-font align-left">2nd Class Level</p>
+                  <select
+                    class="themys-dropdown-font multiclass-field"
+                    id="thisIsTotallyNotRecommended"
+                    disabled
+                  >
+                    <option value="" disabled selected>Level</option>
+                  </select>
+                </div>
+
+                <div class="align-right">
+                  <img src="/resources/icons/chevrons-right.svg" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </main>
 
