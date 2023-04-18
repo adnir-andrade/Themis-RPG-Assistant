@@ -57,7 +57,7 @@ Objetos Nativos
 - [x] Usar laço de repetição (for..in ou for..of ou forEach)
 - [x] Usar pelo menos 3 métodos para manipulação de string
 - [x] String Template
-- [x] Manipulação do CSS de forma nativa via atributo style e classList
+- [x] Manipulação do CSS de forma nativa via atributo style e classList.
 
 Objetos
 
