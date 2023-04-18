@@ -1,3 +1,5 @@
+// export class FormValidator {
+// Instalar AUTO-IMPORT no VSCODE
 class FormValidator {
   constructor() {
     this.form = document.getElementById("form");

@@ -107,6 +107,7 @@ class CampaignManager {
   //   return first.concat(middle, last);
   // }
 
+  // Nested function
   updateButtonContent() {
     const buttons = document.querySelectorAll(".themys-button");
 
