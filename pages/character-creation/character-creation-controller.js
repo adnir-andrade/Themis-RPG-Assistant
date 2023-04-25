@@ -76,3 +76,11 @@ userInput.addEventListener("focus", () => {
 userInput.addEventListener("blur", () => {
   userInput.style.fontSize = 28 + "px";
 });
+
+// Stat screen
+const statSquares = document.getElementsByClassName("stat-square");
+
+for (let i = 0; i < statSquares.length; i++) {
+  const element = statSquares[i];
+  console.log("Test!");
+}
