@@ -86,6 +86,7 @@ nav {
   text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.7);
 }
 
+/* TODO: Remove shadow from dropdown items */
 .themys-dropdown-font {
   color: #3b3634;
 
@@ -216,16 +217,55 @@ select {
   border: none;
 }
 
-/* .my-row {
-  display: grid;
-  position: relative;
-
-  grid-template-columns: 33% 33% 33%;
+.stats-table {
+  width: 100%;
+  margin-bottom: 2em;
 }
 
-.miaumiau {
-  position: absolute;
-} */
+table.stats-table * {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 900;
 
-.stats-table {
+  text-shadow: 1.91708px 3.83416px 2.87562px rgba(0, 0, 0, 0.5);
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 15px 15px;
+}
+
+.stat-bg {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+
+.color-light-sepia {
+  color: rgba(207, 190, 134, 0.75);
+}
+
+.value-bg {
+  background: url(/resources/icons/value-square.svg);
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+
+.color-golden {
+  color: rgba(230, 199, 56, 0.61);
+}
+
+.mod-bg {
+  background: rgba(185, 164, 108, 0.25);
+  border-radius: 4.7927px;
+  border: 0.958541px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 1.91708px 3.83416px 2.87562px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  width: 50px;
+  height: 50px;
 }
