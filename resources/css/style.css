@@ -215,3 +215,17 @@ select {
 .character-name-input::focus {
   border: none;
 }
+
+/* .my-row {
+  display: grid;
+  position: relative;
+
+  grid-template-columns: 33% 33% 33%;
+}
+
+.miaumiau {
+  position: absolute;
+} */
+
+.stats-table {
+}
