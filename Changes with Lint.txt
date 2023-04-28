@@ -1,6 +1,6 @@
 1)
 Problema:
-No arquivo main-controller.js, havia uma variável "let count = 0" que não estava sendo utilizada, conforme código abaixo.
+    No arquivo main-controller.js, havia uma variável "let count = 0" que não estava sendo utilizada, conforme código abaixo.
 
     let count = 0;
 
@@ -23,12 +23,12 @@ No arquivo main-controller.js, havia uma variável "let count = 0" que não esta
     }
 
 Solução:
-Removida variável não utilizada.
+    Removida variável não utilizada.
 
 _____________________________________________________________
 2)
 Problema:
-No arquivo select-campaign-controller.js, estava sendo acusado o seguinte erro para "this.newDiv" e "this.newButton"
+    No arquivo select-campaign-controller.js, estava sendo acusado o seguinte erro para "this.newDiv" e "this.newButton"
 'Expected an assignment or function call and instead saw an expression.'
 
     class CampaignManager {
@@ -41,7 +41,8 @@ No arquivo select-campaign-controller.js, estava sendo acusado o seguinte erro p
         this.campaigns = [];
     }
 
-Solução: Para corrigir isto, foi necessário remover a declaração das duas variáveis dentro do construtor, transformando elas em variáveis locais 
+Solução:
+    Para corrigir isto, foi necessário remover a declaração das duas variáveis dentro do construtor, transformando elas em variáveis locais 
 dos métodos. Contudo, como newDiv e newButton estavam agindo como "variáveis globais" para a Classe, foi necessário mesclar alguns métodos
 para que fosse devidamente acessado.
 Sendo, newDiv e newButton foram criados e chamados apenas quando foram utilizados dentro dos seus devidos métodos.
@@ -77,3 +78,106 @@ O método createNewDiv, createNewButton, nameButton e appendElements foram unido
 
 Sem mais problemas em select-campaign-controller após isto.
 _____________________________________________________________
+3)
+Problema:
+    No arquivo base-form-validator.js, o JSHint estava acusando inumeros erros devido a uma Arrow Function, sendo estes os abaixo:
+
+    Expected an identifier and instead saw '=>'.
+    47	Unexpected '{'.
+    48	Class properties must be methods. Expected '(' but instead saw 'String'.
+    48	'function closure expressions' is only available in Mozilla JavaScript extensions (use moz option).
+    49	Expected an identifier and instead saw '.'.
+    49	'function closure expressions' is only available in Mozilla JavaScript extensions (use moz option).
+    50	Expected an identifier and instead saw '.'.
+    51	Expected an identifier and instead saw '/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/'.
+    52	'function closure expressions' is only available in Mozilla JavaScript extensions (use moz option).
+    52	Expected an identifier and instead saw ';'.
+    53	Unnecessary semicolon.
+
+A parte do código original era esta:
+
+    isFormatValid = (email) => {
+        return String(email)
+        .toLowerCase()
+        .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+    };
+
+Solução:
+    Para resolver o problema, foi isolada a Arrow Function dentro de um método conforme abaixo:
+
+    isFormatValid(email) {
+        const isValid = (email) => {
+        return String(email)
+            .toLowerCase()
+            .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+        };
+_____________________________________________________________
+4)
+Problema:
+    Ainda no arquivo base-form-validator.js, foi encontrado os seguintes problemas logo no construtor:
+
+    Three undefined variables
+        13	form
+        24	form
+        21	email
+        21	password
+
+        Two unused variables
+        7	email
+        8	password
+
+    Sendo este o código original para referência:
+    class FormValidator {
+        constructor() {
+            this.form = document.getElementById("form");
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            this.minimumLength = 8;
+
+Solução:
+    Para satisfazer a solução para o problema, foi alterado a maneira que era declarado "email" e "password".
+Isto acabou também por alterar como as variáveis eram chamadas no método validateForm().
+O trecho do código final ficou assim:
+
+    class FormValidator {
+    constructor() {
+        this.form = document.getElementById("form");
+        this.email = document.getElementById("email");
+        this.password = document.getElementById("password");
+        this.minimumLength = 8;
+    }
+
+    init() {
+        form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        window.alert("A " + event.type + " was initiated.");
+        this.validateForm();
+        });
+    }
+
+    validateForm() {
+        if (
+        !this.verifyEmail(this.email.value) ||
+        !this.verifyPassword(this.password)
+        )
+        return;
+
+        form.submit();
+        this.redirectTo();
+    }
+
+Para corrigir a questão dos "forms", foi incluso a keyword "this" antes de "form" para referenciar a variável declarada no construtor.
+_____________________________________________________________
+4)
+Problema:
+    No arquivo sign-in-validator.js, foi encontrado os seguintes problemas:
+
+    Two undefined variables
+        12	password
+        19	password
+        13	confirmPassword
+        19	confirmPassword

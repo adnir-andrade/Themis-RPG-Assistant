@@ -3,13 +3,13 @@
 class FormValidator {
   constructor() {
     this.form = document.getElementById("form");
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+    this.email = document.getElementById("email");
+    this.password = document.getElementById("password");
     this.minimumLength = 8;
   }
 
   init() {
-    form.addEventListener("submit", (event) => {
+    this.form.addEventListener("submit", (event) => {
       event.preventDefault();
       window.alert("A " + event.type + " was initiated.");
       this.validateForm();
@@ -17,10 +17,13 @@ class FormValidator {
   }
 
   validateForm() {
-    if (!this.verifyEmail(email.value) || !this.verifyPassword(password))
+    if (
+      !this.verifyEmail(this.email.value) ||
+      !this.verifyPassword(this.password.value)
+    )
       return;
 
-    form.submit();
+    this.form.submit();
     this.redirectTo();
   }
 
@@ -29,7 +32,7 @@ class FormValidator {
   }
 
   validatePasswordLength(password) {
-    if (password.value.length < this.minimumLength) return false;
+    if (password.length < this.minimumLength) return false;
 
     return true;
   }
@@ -43,13 +46,17 @@ class FormValidator {
     return true;
   }
 
-  isFormatValid = (email) => {
-    return String(email)
-      .toLowerCase()
-      .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      );
-  };
+  isFormatValid(email) {
+    const isValid = (email) => {
+      return String(email)
+        .toLowerCase()
+        .match(
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+    };
+
+    return isValid(email);
+  }
 
   redirectTo() {
     window.location.href = "/pages/select-campaign/select-campaign.html";
