@@ -1,0 +1,79 @@
+1)
+Problema:
+No arquivo main-controller.js, havia uma variável "let count = 0" que não estava sendo utilizada, conforme código abaixo.
+
+    let count = 0;
+
+    const logoImg = document.getElementsByTagName("img")[0];
+
+    function showLogo() {
+    setTimeout(function () {
+        console.log("Aguardou 2 segundos.");
+        const logoTimer = function () {
+        let count = 0;
+        const intervalId = setInterval(function () {
+            console.log("count: " + count);
+            logoImg.style.opacity = count * 0.01;
+            count++;
+            if (count > 80) clearInterval(intervalId);
+        }, 30);
+        };
+        logoTimer();
+    }, 1500);
+    }
+
+Solução:
+Removida variável não utilizada.
+
+_____________________________________________________________
+2)
+Problema:
+No arquivo select-campaign-controller.js, estava sendo acusado o seguinte erro para "this.newDiv" e "this.newButton"
+'Expected an assignment or function call and instead saw an expression.'
+
+    class CampaignManager {
+    constructor() {
+        this.newDiv;
+        this.newButton;
+        this.tableHolder = document.getElementsByName("table-holder");
+        this.addButton = document.getElementById("add");
+        this.sortButton = document.getElementById("sort");
+        this.campaigns = [];
+    }
+
+Solução: Para corrigir isto, foi necessário remover a declaração das duas variáveis dentro do construtor, transformando elas em variáveis locais 
+dos métodos. Contudo, como newDiv e newButton estavam agindo como "variáveis globais" para a Classe, foi necessário mesclar alguns métodos
+para que fosse devidamente acessado.
+Sendo, newDiv e newButton foram criados e chamados apenas quando foram utilizados dentro dos seus devidos métodos.
+O método createNewDiv, createNewButton, nameButton e appendElements foram unidos em createNewButton conforme abaixo:
+
+    createNewButton(name) {
+        const newButton = document.createElement("button");
+        newButton.type = "submit";
+        newButton.classList.add(
+        "btn",
+        "btn-dark",
+        "themys-button",
+        "themys-button-transp"
+        );
+
+        const formatString = (str) => {
+            const lower = str.toLowerCase();
+            const first = lower.slice(0, 1).toUpperCase();
+            const last = lower.slice(-1).toUpperCase();
+            const middle = lower.slice(1, -1);
+            return first.concat(middle, last);
+        };
+    
+        newButton.textContent = formatString(name);
+
+        (function appendElements(newButton, tableHolder) {
+            const newDiv = document.createElement("div");
+            newDiv.classList.add("p-3");
+            newDiv.appendChild(newButton);
+            tableHolder.appendChild(newDiv);
+        })(newButton, this.tableHolder[0]);
+    }
+
+Sem mais problemas em select-campaign-controller após isto.
+_____________________________________________________________

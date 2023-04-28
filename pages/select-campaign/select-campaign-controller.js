@@ -22,8 +22,6 @@ class CampaignManager {
     this.tableHolder = document.getElementsByName("table-holder");
     this.addButton = document.getElementById("add");
     this.sortButton = document.getElementById("sort");
-    this.newDiv;
-    this.newButton;
     this.campaigns = [];
   }
 
@@ -37,29 +35,38 @@ class CampaignManager {
 
   addCampaign() {
     this.addButton.addEventListener("click", () => {
-      this.createNewDiv();
-      this.createNewButton();
-      const campaignName = this.requestName();
-      this.pushCampaing(campaignName);
-      this.nameButton(campaignName);
-      this.appendElements();
+      const name = this.requestName();
+      this.pushCampaing(name);
+      this.createNewButton(name);
     });
   }
 
-  createNewDiv() {
-    this.newDiv = document.createElement("div");
-    this.newDiv.classList.add("p-3");
-  }
-
-  createNewButton() {
-    this.newButton = document.createElement("button");
-    this.newButton.type = "submit";
-    this.newButton.classList.add(
+  createNewButton(name) {
+    const newButton = document.createElement("button");
+    newButton.type = "submit";
+    newButton.classList.add(
       "btn",
       "btn-dark",
       "themys-button",
       "themys-button-transp"
     );
+
+      const formatString = (str) => {
+        const lower = str.toLowerCase();
+        const first = lower.slice(0, 1).toUpperCase();
+        const last = lower.slice(-1).toUpperCase();
+        const middle = lower.slice(1, -1);
+        return first.concat(middle, last);
+      };
+  
+      newButton.textContent = formatString(name);
+
+      (function appendElements(newButton, tableHolder) {
+        const newDiv = document.createElement("div");
+        newDiv.classList.add("p-3");
+        newDiv.appendChild(newButton);
+        tableHolder.appendChild(newDiv);
+      })(newButton, this.tableHolder[0]);
   }
 
   requestName() {
@@ -78,34 +85,9 @@ class CampaignManager {
     return campaignName;
   }
 
-  nameButton(campaignName) {
-    const formatString = (str) => {
-      const lower = str.toLowerCase();
-      const first = lower.slice(0, 1).toUpperCase();
-      const last = lower.slice(-1).toUpperCase();
-      const middle = lower.slice(1, -1);
-      return first.concat(middle, last);
-    };
-
-    this.newButton.textContent = formatString(campaignName);
-  }
-
-  appendElements() {
-    this.newDiv.appendChild(this.newButton);
-    this.tableHolder[0].appendChild(this.newDiv);
-  }
-
   pushCampaing(campaignName) {
     this.campaigns.push(campaignName);
   }
-
-  // formatString(str) {
-  //   const lower = str.toLowerCase();
-  //   const first = lower.slice(0, 1).toUpperCase();
-  //   const last = lower.slice(-1).toUpperCase();
-  //   const middle = lower.slice(1, -1);
-  //   return first.concat(middle, last);
-  // }
 
   // Nested function
   updateButtonContent() {

@@ -1,5 +1,3 @@
-let count = 0;
-
 const logoImg = document.getElementsByTagName("img")[0];
 
 function showLogo() {
