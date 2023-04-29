@@ -172,12 +172,5 @@ O trecho do código final ficou assim:
 
 Para corrigir a questão dos "forms", foi incluso a keyword "this" antes de "form" para referenciar a variável declarada no construtor.
 _____________________________________________________________
-4)
+5)
 Problema:
-    No arquivo sign-in-validator.js, foi encontrado os seguintes problemas:
-
-    Two undefined variables
-        12	password
-        19	password
-        13	confirmPassword
-        19	confirmPassword
