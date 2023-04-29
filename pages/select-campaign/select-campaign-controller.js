@@ -51,22 +51,23 @@ class CampaignManager {
       "themys-button-transp"
     );
 
-      const formatString = (str) => {
-        const lower = str.toLowerCase();
-        const first = lower.slice(0, 1).toUpperCase();
-        const last = lower.slice(-1).toUpperCase();
-        const middle = lower.slice(1, -1);
-        return first.concat(middle, last);
-      };
-  
-      newButton.textContent = formatString(name);
+    const formatString = (str) => {
+      const lower = str.toLowerCase();
+      const first = lower.slice(0, 1).toUpperCase();
+      const last = lower.slice(-1).toUpperCase();
+      const middle = lower.slice(1, -1);
+      return first.concat(middle, last);
+    };
 
-      (function appendElements(newButton, tableHolder) {
-        const newDiv = document.createElement("div");
-        newDiv.classList.add("p-3");
-        newDiv.appendChild(newButton);
-        tableHolder.appendChild(newDiv);
-      })(newButton, this.tableHolder[0]);
+    newButton.textContent = formatString(name);
+
+    //TODO: Change to String Template for better practices
+    (function appendElements(newButton, tableHolder) {
+      const newDiv = document.createElement("div");
+      newDiv.classList.add("p-3");
+      newDiv.appendChild(newButton);
+      tableHolder.appendChild(newDiv);
+    })(newButton, this.tableHolder[0]);
   }
 
   requestName() {

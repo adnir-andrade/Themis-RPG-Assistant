@@ -1,3 +1,5 @@
+// "use strict";
+
 // export class FormValidator {
 // Instalar AUTO-IMPORT no VSCODE
 class FormValidator {

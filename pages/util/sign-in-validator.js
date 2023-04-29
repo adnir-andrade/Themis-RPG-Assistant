@@ -7,13 +7,9 @@ class SignInValidator extends formsUtils.FormValidator {
   }
 
   verifyPassword() {
-    // TODO: Password is not working properly. Need to understand why.
-    console.log("Password: " + password.value);
-    console.log("Confirmed Password: " + this.confirmPassword.value);
-
     if (
-      !super.validatePasswordLength(password) ||
-      !super.validatePasswordLength(confirmPassword)
+      !super.validatePasswordLength(password.value) ||
+      !super.validatePasswordLength(confirmPassword.value)
     ) {
       window.alert("Please, insert a password with at least 8 characters.");
       return false;
