@@ -26,6 +26,7 @@ class FormValidator {
       return;
 
     this.form.submit();
+    console.log("redirect!");
     this.redirectTo();
   }
 
@@ -61,7 +62,7 @@ class FormValidator {
   }
 
   redirectTo() {
-    window.location.href = "/pages/select-campaign/select-campaign.html";
+    window.location.href = "/app/pages/select-campaign/select-campaign.html";
   }
 }
 
