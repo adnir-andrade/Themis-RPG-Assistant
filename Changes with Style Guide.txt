@@ -1,0 +1,54 @@
+1)
+2.1 File name
+    File names must be all lowercase and may include underscores (_) or dashes (-), but no additional punctuation. Follow the convention that your project uses. Filenames’ extension must be .js.
+        // All file names changed.
+
+2)
+4.1.1 Braces are used for all control structures
+    Braces are required for all control structures (i.e. if, else, for, do, while, as well as any others), even if the body contains only a single statement. The first statement of a non-empty block must begin on its own line.
+        // Added braces to everything. I am sad now.
+
+3)
+4.1.2 Nonempty blocks: K&R style
+    Braces follow the Kernighan and Ritchie style (Egyptian brackets) for nonempty blocks and block-like constructs:
+
+    No line break before the opening brace.
+    Line break after the opening brace.
+    Line break before the closing brace.
+    Line break after the closing brace if that brace terminates a statement or the body of a function or class statement, or a class method. Specifically, there is no line break after the brace if it is followed by else, catch, while, or a comma, semicolon, or right-parenthesis.
+        // At least this will go well with 4.1.1 - All changed.
+
+4)
+6.1 Rules common to all identifiers
+    Identifiers use only ASCII letters and digits, and, in a small number of cases noted below, underscores and very rarely (when required by frameworks like Angular) dollar signs.
+    Give as descriptive a name as possible, within reason. Do not worry about saving horizontal space as it is far more important to make your code immediately understandable by a new reader. Do not use abbreviations that are ambiguous or unfamiliar to readers outside your project, and do not abbreviate by deleting letters within a word
+        // I liked this one.
+
+5)
+6.3 Camel case: defined
+    Sometimes there is more than one reasonable way to convert an English phrase into camel case, such as when acronyms or unusual constructs like IPv6 or iOS are present. To improve predictability, Google Style specifies the following (nearly) deterministic scheme.
+    Beginning with the prose form of the name:
+    Convert the phrase to plain ASCII and remove any apostrophes. For example, Müller's algorithm might become Muellers algorithm.
+    Divide this result into words, splitting on spaces and any remaining punctuation (typically hyphens).
+    Recommended: if any word already has a conventional camel case appearance in common usage, split this into its constituent parts (e.g., AdWords becomes ad words). Note that a word such as iOS is not really in camel case per se; it defies any convention, so this recommendation does not apply.
+    Now lowercase everything (including acronyms), then uppercase only the first character of:
+    … each word, to yield upper camel case, or
+    … each word except the first, to yield lower camel case
+    Finally, join all the words into a single identifier.
+    Note that the casing of the original words is almost entirely disregarded.
+
+6)
+5.1.1 Use const and let
+    Declare all local variables with either const or let. Use const by default, unless a variable needs to be reassigned. The var keyword must not be used.
+        // Basic, but double checked
+
+7)
+5.1.2 One variable per declaration
+    Every local variable declaration declares only one variable: declarations such as let a = 1, b = 2; are not used.
+        // Also basic, but changed one appearance
+
+8)
+5.1.3 Declared when needed, initialized as soon as possible
+    Local variables are not habitually declared at the start of their containing block or block-like construct. Instead, local variables are declared close to the point they are first used (within reason), to minimize their scope.
+        // Thought it would be easier, but lot's of cases to fix
+

@@ -19,7 +19,7 @@ customButtons.forEach((button) => {
 // Adding a new table
 class CampaignManager {
   constructor() {
-    this.tableHolder = document.getElementsByName("table-holder");
+    this.campaignContainer = document.getElementsByName("table-holder");
     this.addButton = document.getElementById("add");
     this.sortButton = document.getElementById("sort");
     this.campaigns = [];
@@ -36,6 +36,7 @@ class CampaignManager {
   addCampaign() {
     this.addButton.addEventListener("click", () => {
       const name = this.requestName();
+
       this.pushCampaing(name);
       this.createNewButton(name);
     });
@@ -43,6 +44,7 @@ class CampaignManager {
 
   createNewButton(name) {
     const newButton = document.createElement("button");
+
     newButton.type = "submit";
     newButton.classList.add(
       "btn",
@@ -51,27 +53,33 @@ class CampaignManager {
       "themys-button-transp"
     );
 
-    const formatString = (str) => {
-      const lower = str.toLowerCase();
-      const first = lower.slice(0, 1).toUpperCase();
-      const last = lower.slice(-1).toUpperCase();
-      const middle = lower.slice(1, -1);
-      return first.concat(middle, last);
+    const formatString = (originalString) => {
+      const lowerCaseString = originalString.toLowerCase();
+
+      const firstLetter = lowerCaseString.slice(0, 1).toUpperCase();
+
+      const lastLetter = lowerCaseString.slice(-1).toUpperCase();
+
+      const lettersInBetween = lowerCaseString.slice(1, -1);
+
+      return firstLetter.concat(lettersInBetween, lastLetter);
     };
 
     newButton.textContent = formatString(name);
 
     //TODO: Change to String Template for better practices
-    (function appendElements(newButton, tableHolder) {
+    (function appendElements(newButton, campaignContainer) {
       const newDiv = document.createElement("div");
+
       newDiv.classList.add("p-3");
       newDiv.appendChild(newButton);
-      tableHolder.appendChild(newDiv);
-    })(newButton, this.tableHolder[0]);
+      campaignContainer.appendChild(newDiv);
+    })(newButton, this.campaignContainer[0]);
   }
 
   requestName() {
     let isDecided = false;
+
     let campaignName = "";
 
     do {
@@ -94,15 +102,20 @@ class CampaignManager {
   updateButtonContent() {
     const buttons = document.querySelectorAll(".themys-button");
 
-    const formatString = (str) => {
-      const lower = str.toLowerCase();
-      const first = lower.slice(0, 1).toUpperCase();
-      const last = lower.slice(-1).toUpperCase();
-      const middle = lower.slice(1, -1);
-      return first.concat(middle, last);
+    const formatString = (originalString) => {
+      const lowerCaseString = originalString.toLowerCase();
+
+      const firstLetter = lowerCaseString.slice(0, 1).toUpperCase();
+
+      const lastLetter = lowerCaseString.slice(-1).toUpperCase();
+
+      const lettersInBetween = lowerCaseString.slice(1, -1);
+
+      return firstLetter.concat(lettersInBetween, lastLetter);
     };
 
     const sortedCampaigns = this.campaigns.sort();
+
     buttons.forEach((button, index) => {
       button.textContent = formatString(sortedCampaigns[index]);
     });
@@ -110,4 +123,5 @@ class CampaignManager {
 }
 
 const campaignManager = new CampaignManager();
+
 campaignManager.init();
