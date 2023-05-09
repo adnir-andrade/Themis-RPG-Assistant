@@ -73,3 +73,11 @@
 4.3.1 One statement per line
     Each statement is followed by a line-break.
 
+12)
+4.2 Block indentation: +2 spaces
+    Each time a new block or block-like construct is opened, the indent increases by two spaces. When the block ends, the indent returns to the previous indent level. The indent level applies to both code and comments throughout the block. (See the example in 4.1.2 Nonempty blocks: K&R style).
+
+13)
+4.2.1 Array literals: optionally "block-like"
+    Any array literal may optionally be formatted as if it were a “block-like construct.”
+

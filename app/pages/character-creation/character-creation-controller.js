@@ -11,7 +11,14 @@ window.addEventListener("load", function () {
 });
 
 // Sorting alphabetically
-const races = ["Human", "Dwarf", "Elf", "Orc", "Malit", "Ramadriin"];
+const races = [
+  "Human", 
+  "Dwarf", 
+  "Elf", 
+  "Orc", 
+  "Malit", 
+  "Ramadriin"
+];
 
 races.sort(function (firstRace, secondRace) {
   if (firstRace < secondRace) {
