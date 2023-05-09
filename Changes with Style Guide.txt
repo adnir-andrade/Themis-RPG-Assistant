@@ -52,3 +52,24 @@
     Local variables are not habitually declared at the start of their containing block or block-like construct. Instead, local variables are declared close to the point they are first used (within reason), to minimize their scope.
         // Thought it would be easier, but lot's of cases to fix
 
+9)
+4.4 Column limit: 80
+    JavaScript code has a column limit of 80 characters. Except as noted below, any line that would exceed this limit must be line-wrapped, as explained in 4.5 Line-wrapping.
+
+    Exceptions:
+
+    goog.module, goog.require and goog.requireType statements (see 3.3 goog.module statement and 3.6 goog.require and goog.requireType statements).
+    ES module import and export from statements (see 3.4.1 Imports and 3.4.2.4 export from).
+    Lines where obeying the column limit is not possible or would hinder discoverability. Examples include:
+    A long URL which should be clickable in source.
+    A shell command intended to be copied-and-pasted.
+    A long string literal which may need to be copied or searched for wholly (e.g., a long file path).
+
+10)
+4.3.2 Semicolons are required
+    Every statement must be terminated with a semicolon. Relying on automatic semicolon insertion is forbidden.
+
+11)
+4.3.1 One statement per line
+    Each statement is followed by a line-break.
+
