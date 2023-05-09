@@ -7,7 +7,7 @@ class FormValidator {
     this.form = document.getElementById("form");
     this.email = document.getElementById("email");
     this.password = document.getElementById("password");
-    this.minimumLength = 8;
+    this.MINIMUM_LENGTH = 8;
   }
 
   init() {
@@ -35,7 +35,9 @@ class FormValidator {
   }
 
   validatePasswordLength(password) {
-    if (password.length < this.minimumLength) return false;
+    if (password.length < this.MINIMUM_LENGTH) {
+      return false;
+    }
 
     return true;
   }
@@ -51,11 +53,10 @@ class FormValidator {
 
   isFormatValid(email) {
     const isValid = (email) => {
-      return String(email)
-        .toLowerCase()
-        .match(
-          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        );
+      const CORRECT_PATTERN =
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+      return String(email).toLowerCase().match(CORRECT_PATTERN);
     };
 
     return isValid(email);

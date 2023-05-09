@@ -12,7 +12,6 @@ class LogInValidator extends formsUtils.FormValidator {
       window.alert("Please, insert a password with at least 8 characters.");
       return false;
     }
-
     return true;
   }
 }

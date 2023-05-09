@@ -1,20 +1,20 @@
-const char1 = document.getElementById("char-1");
-const originalPosition = char1.offsetLeft;
+const characterButton = document.getElementById("character-1");
+const originalPosition = characterButton.offsetLeft;
+
 const newPosition = (function () {
-  const x = originalPosition;
-  const offset = 0.4;
-  return x - x * offset;
+  const OFFSET = 0.4;
+  return originalPosition - originalPosition * OFFSET;
 })();
 
-let flag = 1;
-char1.addEventListener("click", function move() {
-  if (flag > 0) {
-    this.style.position = "relative";
-    this.style.left = `${newPosition}px`;
-  } else {
+let isSelected = false;
+
+characterButton.addEventListener("click", function move() {
+  if (isSelected) {
     this.style.position = "static";
     this.style.left = `${originalPosition}px`;
+  } else {
+    this.style.position = "relative";
+    this.style.left = `${newPosition}px`;
   }
-
-  flag *= -1;
+  isSelected = !isSelected;
 });
