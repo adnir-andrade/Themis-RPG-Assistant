@@ -1,3 +1,4 @@
+"use strict";
 import formsUtils from "./base-form-validator.js";
 
 class SignInValidator extends formsUtils.FormValidator {

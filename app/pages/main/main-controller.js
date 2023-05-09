@@ -1,3 +1,5 @@
+"use strict";
+
 function showLogo() {
   setTimeout(function () {
     const logoTimer = () => {

@@ -1,3 +1,4 @@
+"use strict";
 // Util buttons fancy hover
 const customButtons = document.querySelectorAll(".custom-button");
 
@@ -84,7 +85,6 @@ class CampaignManager {
 
     do {
       campaignName = prompt("What shall be the name of your new Campaign?");
-
       isDecided = confirm(
         `Are you sure want to name it ${campaignName}?`,
         "Yes, No"

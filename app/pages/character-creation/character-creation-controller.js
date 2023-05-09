@@ -1,3 +1,5 @@
+"use strict";
+
 // The code is purposely disorganized to comply with the activity's requirements
 // Adding Listener onload
 window.addEventListener("load", function () {
