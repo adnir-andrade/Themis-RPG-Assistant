@@ -5,7 +5,7 @@ body {
   background: url(/resources/images/wallpaper-1.jpg);
   background-size: cover;
 
-  font-family: "Cinzel Decorative", cursive;
+  font-family: 'Cinzel Decorative', cursive;
 }
 
 /* Rectangle */
@@ -244,11 +244,11 @@ table {
 }
 
 .stat-bg:hover {
-    cursor: pointer;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+  cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .color-light-sepia {
@@ -289,13 +289,13 @@ table {
   height: 50px;
 }
 
-.selected-stat {
+#selected-stat {
   font-style: normal;
   font-weight: 900;
   font-size: 60px;
   line-height: 48px;
 
-  text-shadow: 0px 0px 35px #FFFFFF, 2px 4px 3px rgba(0, 0, 0, 0.75);
+  text-shadow: 0px 0px 35px #ffffff, 2px 4px 3px rgba(0, 0, 0, 0.75);
 
   width: 50px;
   height: 50px;
@@ -310,22 +310,22 @@ button {
 
 #submitBtn:hover {
   transform: scale(1.5);
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 #submitBtn:not(:hover) {
   transform: scale(1);
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 .bttn-focus:hover {
   transform: scale(1.15);
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 .bttn-focus:not(:hover) {
   transform: scale(1);
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 .non-selectable {
