@@ -334,3 +334,21 @@ button {
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+
+.form-control:required:invalid {
+  border-color: rgb(255, 40, 40, 0.4);
+  box-shadow: 2px 2px 10px rgba(255, 40, 40, 0.4);
+}
+
+.form-control:required:invalid:focus {
+  box-shadow: none;
+}
+
+.form-control:required:valid {
+  border-color: rgb(40, 255, 40, 0.4);
+  box-shadow: 2px 2px 10px rgba(40, 255, 40, 0.2);
+}
+
+.character-name-input:required:invalid {
+  color: rgb(255, 211, 6);
+}
