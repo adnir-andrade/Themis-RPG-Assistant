@@ -123,8 +123,29 @@ const statSquares = document.getElementsByClassName('stat-bg');
 
 const selectedSquare = document.getElementById('selected-stat');
 
+let selectedRowIndex = 0;
+
 for (let i = 0; i < statSquares.length; i++) {
   statSquares[i].addEventListener('click', (event) => {
     selectedSquare.textContent = statSquares[i].textContent;
+    selectedRowIndex = i;
   });
 }
+
+const valueSquares = document.getElementsByClassName('value-bg');
+
+const modSquares = document.getElementsByClassName('mod-bg');
+
+const decreaseValueButton = document.getElementById('decrease-value');
+
+decreaseValueButton.addEventListener('click', (event) => {
+  valueSquares[selectedRowIndex].textContent =
+    parseInt(valueSquares[selectedRowIndex].textContent) - 1;
+});
+
+const increaseValueButton = document.getElementById('increase-value');
+
+increaseValueButton.addEventListener('click', (event) => {
+  valueSquares[selectedRowIndex].textContent =
+    parseInt(valueSquares[selectedRowIndex].textContent) + 1;
+});
