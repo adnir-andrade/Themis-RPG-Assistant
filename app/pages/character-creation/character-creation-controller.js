@@ -106,3 +106,21 @@ userInput.addEventListener("blur", () => {
 //   const element = statSquares[i];
 //   console.log("Test!");
 // }
+
+  const form1 = document.getElementById('name-form');
+
+  const form2 = document.getElementById('character-form');
+
+  const form3 = document.getElementById('stats-form');
+
+  const form4 = document.getElementById('perks-form');
+
+  const submitBtn = document.getElementById('submitBtn');
+
+  submitBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    form1.blur();
+
+    console.log("It worked!");
+  })
