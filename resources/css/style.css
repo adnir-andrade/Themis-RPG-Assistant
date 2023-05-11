@@ -243,6 +243,14 @@ table {
   height: 50px;
 }
 
+.stat-bg:hover {
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
 .color-light-sepia {
   color: rgba(207, 190, 134, 0.75);
 }
@@ -295,7 +303,7 @@ table {
   margin-right: 15px;
 }
 
-#submitBtn {
+button {
   background-color: rgba(0, 0, 0, 0);
   border: none;
 }
@@ -308,4 +316,21 @@ table {
 #submitBtn:not(:hover) {
   transform: scale(1);
   transition-duration: .5s;
+}
+
+.bttn-focus:hover {
+  transform: scale(1.15);
+  transition-duration: .5s;
+}
+
+.bttn-focus:not(:hover) {
+  transform: scale(1);
+  transition-duration: .5s;
+}
+
+.non-selectable {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
