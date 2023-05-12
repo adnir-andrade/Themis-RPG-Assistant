@@ -3,7 +3,7 @@
 export class FormValidator {
   constructor() {
     this.form = document.getElementById("form");
-    this.email = document.getElementById("email");
+    this.email = form.elements["email"];
     this.password = document.getElementById("password");
     this.MINIMUM_LENGTH = 8;
   }

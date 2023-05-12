@@ -93,13 +93,6 @@ userInput.addEventListener('blur', () => {
 
 // Stat screen
 
-// const statSquares = document.getElementsByClassName("stat-square");
-
-// for (let i = 0; i < statSquares.length; i++) {
-//   const element = statSquares[i];
-//   console.log("Test!");
-// }
-
 const nameForm = document.getElementById('name-form');
 
 const characterForm = document.getElementById('character-form');
@@ -110,11 +103,18 @@ const perksForms = document.getElementById('perks-form');
 
 const submitButton = document.getElementById('submitBtn');
 
+// Acesso aos elementos de um formulário via hierarquia (caminho) de objetos, ou seja, array forms e elements
+for (let i = 0; i < statsForm.elements.length; i++) {
+  const element = statsForm.elements[i];
+  
+  element.addEventListener('click', (event) => {
+    event.preventDefault();
+  });
+}
+
 
 submitButton.addEventListener('click', (event) => {
   event.preventDefault();
-
-  nameForm.blur();
 
   console.log('It worked!');
 });
