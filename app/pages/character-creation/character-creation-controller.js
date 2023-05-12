@@ -134,7 +134,17 @@ for (let i = 0; i < statSquares.length; i++) {
 
 const valueSquares = document.getElementsByClassName('value-bg');
 
-const modSquares = document.getElementsByClassName('mod-bg');
+const adjustMod = (index) => {
+  let newModValue = parseInt(valueSquares[index].textContent) - 5;
+
+  if (newModValue > 0) {
+    newModValue = '+' + newModValue.toString();
+  }
+
+  const modSquares = document.getElementsByClassName('mod-bg');
+
+  modSquares[index].textContent = newModValue;
+};
 
 let pointsLeft = document.getElementById('points-left');
 
@@ -144,6 +154,7 @@ decreaseValueButton.addEventListener('click', (event) => {
   valueSquares[selectedRowIndex].textContent =
     parseInt(valueSquares[selectedRowIndex].textContent) - 1;
   pointsLeft.textContent = parseInt(pointsLeft.textContent) + 1;
+  adjustMod(selectedRowIndex);
 });
 
 const increaseValueButton = document.getElementById('increase-value');
@@ -152,4 +163,5 @@ increaseValueButton.addEventListener('click', (event) => {
   valueSquares[selectedRowIndex].textContent =
     parseInt(valueSquares[selectedRowIndex].textContent) + 1;
   pointsLeft.textContent = parseInt(pointsLeft.textContent) - 1;
+  adjustMod(selectedRowIndex);
 });
