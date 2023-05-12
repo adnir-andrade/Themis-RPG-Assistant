@@ -128,53 +128,56 @@ const changeStats = (function () {
 
   const adjustMod = (index) => {
     let newModValue = parseInt(valueSquares[index].textContent) - 5;
-  
+
     if (newModValue > 0) {
       newModValue = '+' + newModValue.toString();
     }
-  
+
     const modSquares = document.getElementsByClassName('mod-bg');
-  
+
     modSquares[index].textContent = newModValue;
   };
 
   const pointsLeft = document.getElementById('points-left');
 
-  const increase = function(index) {
-    if (parseInt(pointsLeft.textContent) > 0 && parseInt(valueSquares[index].textContent) <  10) {
+  const increase = function (index) {
+    if (
+      parseInt(pointsLeft.textContent) > 0 &&
+      parseInt(valueSquares[index].textContent) < 10
+    ) {
       valueSquares[index].textContent =
         parseInt(valueSquares[index].textContent) + 1;
       pointsLeft.textContent = parseInt(pointsLeft.textContent) - 1;
       adjustMod(index);
     }
-  }
+  };
 
-  const decrease = function(index) {
+  const decrease = function (index) {
     if (parseInt(valueSquares[index].textContent) > 1) {
       valueSquares[index].textContent =
-      parseInt(valueSquares[index].textContent) - 1;
-  
+        parseInt(valueSquares[index].textContent) - 1;
+
       const pointsLeft = document.getElementById('points-left');
-  
+
       pointsLeft.textContent = parseInt(pointsLeft.textContent) + 1;
       adjustMod(index);
     }
+  };
 
-    //TODO: Reset is not working by now because of form. Need to change it's type so it's not considered Default Submit
-    const reset = function() {
-      for (let i = 0; i < valueSquares.length; i++) {
-        valueSquares[i].textContent =
-        5;
-        adjustMod(i);
-      }
+  const reset = function () {
+    for (let i = 0; i < valueSquares.length; i++) {
+      valueSquares[i].textContent = 5;
+      adjustMod(i);
     }
-  }
+
+    pointsLeft.textContent = 10;
+  };
 
   return {
     increase: increase,
     decrease: decrease,
-    reset: reset
-  }
+    reset: reset,
+  };
 })();
 
 const decreaseValueButton = document.getElementById('decrease-value');
@@ -192,5 +195,5 @@ increaseValueButton.addEventListener('click', (event) => {
 const resetValueButton = document.getElementById('reset');
 
 resetValueButton.addEventListener('click', (event) => {
-  changeStats.reset;
+  changeStats.reset();
 });
