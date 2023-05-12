@@ -100,20 +100,21 @@ userInput.addEventListener('blur', () => {
 //   console.log("Test!");
 // }
 
-const form1 = document.getElementById('name-form');
+const nameForm = document.getElementById('name-form');
 
-const form2 = document.getElementById('character-form');
+const characterForm = document.getElementById('character-form');
 
-const form3 = document.getElementById('stats-form');
+const statsForm = document.getElementById('stats-form');
 
-const form4 = document.getElementById('perks-form');
+const perksForms = document.getElementById('perks-form');
 
-const submitBtn = document.getElementById('submitBtn');
+const submitButton = document.getElementById('submitBtn');
 
-submitBtn.addEventListener('click', (event) => {
+
+submitButton.addEventListener('click', (event) => {
   event.preventDefault();
 
-  form1.blur();
+  nameForm.blur();
 
   console.log('It worked!');
 });
@@ -149,11 +150,12 @@ const adjustMod = (index) => {
 const decreaseValueButton = document.getElementById('decrease-value');
 
 decreaseValueButton.addEventListener('click', (event) => {
-  const pointsLeft = document.getElementById('points-left');
-
   if (parseInt(valueSquares[selectedRowIndex].textContent) > 1) {
     valueSquares[selectedRowIndex].textContent =
-      parseInt(valueSquares[selectedRowIndex].textContent) - 1;
+    parseInt(valueSquares[selectedRowIndex].textContent) - 1;
+
+    const pointsLeft = document.getElementById('points-left');
+
     pointsLeft.textContent = parseInt(pointsLeft.textContent) + 1;
     adjustMod(selectedRowIndex);
   }
