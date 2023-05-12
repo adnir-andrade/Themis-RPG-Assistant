@@ -278,7 +278,7 @@ table {
   height: 50px;
 }
 
-.points-left-bg {
+#points-left {
   background: url(/resources/icons/points-left-square.svg);
   background-size: cover;
   background-position: center;

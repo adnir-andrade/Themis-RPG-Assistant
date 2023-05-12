@@ -136,11 +136,14 @@ const valueSquares = document.getElementsByClassName('value-bg');
 
 const modSquares = document.getElementsByClassName('mod-bg');
 
+let pointsLeft = document.getElementById('points-left');
+
 const decreaseValueButton = document.getElementById('decrease-value');
 
 decreaseValueButton.addEventListener('click', (event) => {
   valueSquares[selectedRowIndex].textContent =
     parseInt(valueSquares[selectedRowIndex].textContent) - 1;
+  pointsLeft.textContent = parseInt(pointsLeft.textContent) + 1;
 });
 
 const increaseValueButton = document.getElementById('increase-value');
@@ -148,4 +151,5 @@ const increaseValueButton = document.getElementById('increase-value');
 increaseValueButton.addEventListener('click', (event) => {
   valueSquares[selectedRowIndex].textContent =
     parseInt(valueSquares[selectedRowIndex].textContent) + 1;
+  pointsLeft.textContent = parseInt(pointsLeft.textContent) - 1;
 });
