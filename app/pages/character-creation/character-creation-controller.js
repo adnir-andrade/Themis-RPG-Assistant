@@ -103,16 +103,6 @@ const perksForms = document.getElementById('perks-form');
 
 const submitButton = document.getElementById('submitBtn');
 
-// Acesso aos elementos de um formulário via hierarquia (caminho) de objetos, ou seja, array forms e elements
-for (let i = 0; i < statsForm.elements.length; i++) {
-  const element = statsForm.elements[i];
-  
-  element.addEventListener('click', (event) => {
-    event.preventDefault();
-  });
-}
-
-
 submitButton.addEventListener('click', (event) => {
   event.preventDefault();
 
@@ -169,11 +159,21 @@ const changeStats = (function () {
       pointsLeft.textContent = parseInt(pointsLeft.textContent) + 1;
       adjustMod(index);
     }
+
+    //TODO: Reset is not working by now because of form. Need to change it's type so it's not considered Default Submit
+    const reset = function() {
+      for (let i = 0; i < valueSquares.length; i++) {
+        valueSquares[i].textContent =
+        5;
+        adjustMod(i);
+      }
+    }
   }
 
   return {
     increase: increase,
-    decrease: decrease
+    decrease: decrease,
+    reset: reset
   }
 })();
 
@@ -187,4 +187,10 @@ const increaseValueButton = document.getElementById('increase-value');
 
 increaseValueButton.addEventListener('click', (event) => {
   changeStats.increase(selectedRowIndex);
+});
+
+const resetValueButton = document.getElementById('reset');
+
+resetValueButton.addEventListener('click', (event) => {
+  changeStats.reset;
 });
