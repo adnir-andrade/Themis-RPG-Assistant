@@ -133,43 +133,58 @@ for (let i = 0; i < statSquares.length; i++) {
   });
 }
 
-const valueSquares = document.getElementsByClassName('value-bg');
+const changeStats = (function () {
+  const valueSquares = document.getElementsByClassName('value-bg');
 
-const adjustMod = (index) => {
-  let newModValue = parseInt(valueSquares[index].textContent) - 5;
+  const adjustMod = (index) => {
+    let newModValue = parseInt(valueSquares[index].textContent) - 5;
+  
+    if (newModValue > 0) {
+      newModValue = '+' + newModValue.toString();
+    }
+  
+    const modSquares = document.getElementsByClassName('mod-bg');
+  
+    modSquares[index].textContent = newModValue;
+  };
 
-  if (newModValue > 0) {
-    newModValue = '+' + newModValue.toString();
+  const pointsLeft = document.getElementById('points-left');
+
+  const increase = function(index) {
+    if (parseInt(pointsLeft.textContent) > 0 && parseInt(valueSquares[index].textContent) <  10) {
+      valueSquares[index].textContent =
+        parseInt(valueSquares[index].textContent) + 1;
+      pointsLeft.textContent = parseInt(pointsLeft.textContent) - 1;
+      adjustMod(index);
+    }
   }
 
-  const modSquares = document.getElementsByClassName('mod-bg');
+  const decrease = function(index) {
+    if (parseInt(valueSquares[index].textContent) > 1) {
+      valueSquares[index].textContent =
+      parseInt(valueSquares[index].textContent) - 1;
+  
+      const pointsLeft = document.getElementById('points-left');
+  
+      pointsLeft.textContent = parseInt(pointsLeft.textContent) + 1;
+      adjustMod(index);
+    }
+  }
 
-  modSquares[index].textContent = newModValue;
-};
+  return {
+    increase: increase,
+    decrease: decrease
+  }
+})();
 
 const decreaseValueButton = document.getElementById('decrease-value');
 
 decreaseValueButton.addEventListener('click', (event) => {
-  if (parseInt(valueSquares[selectedRowIndex].textContent) > 1) {
-    valueSquares[selectedRowIndex].textContent =
-    parseInt(valueSquares[selectedRowIndex].textContent) - 1;
-
-    const pointsLeft = document.getElementById('points-left');
-
-    pointsLeft.textContent = parseInt(pointsLeft.textContent) + 1;
-    adjustMod(selectedRowIndex);
-  }
+  changeStats.decrease(selectedRowIndex);
 });
 
 const increaseValueButton = document.getElementById('increase-value');
 
 increaseValueButton.addEventListener('click', (event) => {
-  const pointsLeft = document.getElementById('points-left');
-
-  if (parseInt(pointsLeft.textContent) > 0 && parseInt(valueSquares[selectedRowIndex].textContent) <  10) {
-    valueSquares[selectedRowIndex].textContent =
-      parseInt(valueSquares[selectedRowIndex].textContent) + 1;
-    pointsLeft.textContent = parseInt(pointsLeft.textContent) - 1;
-    adjustMod(selectedRowIndex);
-  }
+  changeStats.increase(selectedRowIndex);
 });
