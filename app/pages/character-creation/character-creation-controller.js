@@ -148,6 +148,10 @@ const adjustMod = (index) => {
 
 let pointsLeft = document.getElementById('points-left');
 
+const checkPointsLeft = (index) => {
+  //TODO: Implents;
+};
+
 const decreaseValueButton = document.getElementById('decrease-value');
 
 decreaseValueButton.addEventListener('click', (event) => {
