@@ -140,7 +140,7 @@ const changeStats = (function () {
 
   const pointsLeft = document.getElementById('points-left');
 
-  const increase = function (index) {
+  const increase = (index) => {
     if (
       parseInt(pointsLeft.textContent) > 0 &&
       parseInt(valueSquares[index].textContent) < 10
@@ -152,7 +152,7 @@ const changeStats = (function () {
     }
   };
 
-  const decrease = function (index) {
+  const decrease = (index) => {
     if (parseInt(valueSquares[index].textContent) > 1) {
       valueSquares[index].textContent =
         parseInt(valueSquares[index].textContent) - 1;
@@ -164,7 +164,7 @@ const changeStats = (function () {
     }
   };
 
-  const reset = function () {
+  const reset = () => {
     for (let i = 0; i < valueSquares.length; i++) {
       valueSquares[i].textContent = 5;
       adjustMod(i);
@@ -173,9 +173,31 @@ const changeStats = (function () {
     pointsLeft.textContent = 10;
   };
 
+  //TODO: Finish implementing randomize
+  const randomize = () => {
+    let pointsPool = 45 - 7; // Total points - 7 stats
+
+    let randomNumber = 1;
+
+    for (let i = 0; i < valueSquares.length; i++) {
+      randomNumber = Math.floor(Math.random() * 10) + 1;
+
+      if (pointsPool - randomNumber >= 0) {
+        pointsPool -= randomNumber;
+      } else if (pointsPool === 0) {
+        randomNumber = pointsPool;
+      }
+      valueSquares[i].textContent = randomNumber;
+      adjustMod(i);
+    }
+    console.log(pointsPool);
+    pointsLeft.textContent = 0;
+  };
+
   return {
     increase: increase,
     decrease: decrease,
+    randomize: randomize,
     reset: reset,
   };
 })();
@@ -190,6 +212,12 @@ const increaseValueButton = document.getElementById('increase-value');
 
 increaseValueButton.addEventListener('click', (event) => {
   changeStats.increase(selectedRowIndex);
+});
+
+const randomValueButton = document.getElementById('random');
+
+randomValueButton.addEventListener('click', (event) => {
+  changeStats.randomize();
 });
 
 const resetValueButton = document.getElementById('reset');
