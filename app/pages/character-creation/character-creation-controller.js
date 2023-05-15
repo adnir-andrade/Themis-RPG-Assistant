@@ -93,16 +93,11 @@ userInput.addEventListener('blur', () => {
 
 // Stat screen
 
-
-
-
 const statsForm = document.getElementById('stats-form');
 
 const perksForms = document.getElementById('perks-form');
 
 const submitButton = document.getElementById('submitBtn');
-
-
 
 // Second screen
 const statSquares = document.getElementsByClassName('stat-bg');
@@ -221,80 +216,79 @@ resetValueButton.addEventListener('click', (event) => {
   changeStats.reset();
 });
 
-
 // Third Screen
 const meau = document.getElementById('character-form');
 
-const characterCreation = (function() {
+const characterCreation = (function () {
   const getName = () => {
     const nameForm = document.getElementById('name-form');
 
     return nameForm.elements.username.value;
-  }
-  
+  };
+
   const getStats = () => {
     const valueSquares = document.getElementsByClassName('value-bg');
-    
+
     const characterStatsValue = new Array();
 
     for (let i = 0; i < valueSquares.length; i++) {
       characterStatsValue.push(parseInt(valueSquares[i].textContent));
     }
-  }
+  };
 
   const getCharacterLevel = () => {
     const characterForm = document.getElementById('character-form');
 
     return characterForm.elements[0].value;
-  }
+  };
 
   const getCharacterRace = () => {
     const characterForm = document.getElementById('character-form');
 
     return characterForm.elements[1].value;
-  }
+  };
 
   const getCharacterClass = () => {
     const characterForm = document.getElementById('character-form');
 
     return characterForm.elements[2].value;
-  }
+  };
 
   const getCharacterClassLevel = () => {
     const characterForm = document.getElementById('character-form');
 
     return characterForm.elements[3].value;
-  }
+  };
 
   const isMulticlass = () => {
     const characterForm = document.getElementById('character-form');
 
-    return characterForm.elements[4].value
-  }
+    return characterForm.elements[4].checked;
+  };
 
   const getCharacterSecondClass = () => {
     const characterForm = document.getElementById('character-form');
 
     return characterForm.elements[5].value;
-  }
+  };
 
   const getCharacterSecondClassLevel = () => {
     const characterForm = document.getElementById('character-form');
 
     return characterForm.elements[6].value;
-  }
+  };
 
   return {
-    getName : getName,
-    getCharacterLevel : getCharacterLevel,
-    getCharacterRace : getCharacterRace,
-    getCharacterClass : getCharacterClass,
-    getCharacterClassLevel : getCharacterClassLevel,
-    isMulticlass : isMulticlass,
-    getCharacterSecondClass : getCharacterSecondClass,
-    getCharacterSecondClassLevel : getCharacterSecondClassLevel,
-    getStatsValues : getStats
-  }
+    getName: getName,
+    getCharacterLevel: getCharacterLevel,
+    getCharacterRace: getCharacterRace,
+    getCharacterClass: getCharacterClass,
+    getCharacterClassLevel: getCharacterClassLevel,
+    isMulticlass: isMulticlass,
+    getCharacterSecondClass: getCharacterSecondClass,
+    getCharacterSecondClassLevel: getCharacterSecondClassLevel,
+    getStatsValues: getStats,
+  };
 })();
 
 submitButton.addEventListener('click', (event) => {
@@ -306,10 +300,8 @@ submitButton.addEventListener('click', (event) => {
   characterCreation.getCharacterClass();
   characterCreation.getCharacterClassLevel();
   if (characterCreation.isMulticlass()) {
-    //TODO: Implement
+    characterCreation.getCharacterSecondClass();
+    characterCreation.getCharacterSecondClassLevel();
   }
-  characterCreation.getCharacterSecondClass();
-  characterCreation.getCharacterSecondClassLevel();
-
   characterCreation.getStatsValues();
 });
