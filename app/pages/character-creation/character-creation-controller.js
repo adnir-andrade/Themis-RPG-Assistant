@@ -294,14 +294,17 @@ const characterCreation = (function () {
 submitButton.addEventListener('click', (event) => {
   event.preventDefault();
 
-  characterCreation.getName();
-  characterCreation.getCharacterLevel();
-  characterCreation.getCharacterRace();
-  characterCreation.getCharacterClass();
-  characterCreation.getCharacterClassLevel();
   if (characterCreation.isMulticlass()) {
     characterCreation.getCharacterSecondClass();
     characterCreation.getCharacterSecondClassLevel();
   }
   characterCreation.getStatsValues();
+
+  const character = {
+    name: characterCreation.getName(),
+    level: characterCreation.getCharacterLevel(),
+    race: characterCreation.getCharacterRace(),
+    class: characterCreation.getCharacterClass(),
+    classLevel: characterCreation.getCharacterClassLevel(),
+  };
 });
