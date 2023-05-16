@@ -287,16 +287,27 @@ const characterCreation = (function () {
     isMulticlass: isMulticlass,
     getCharacterSecondClass: getCharacterSecondClass,
     getCharacterSecondClassLevel: getCharacterSecondClassLevel,
-    getStatsValues: getStats,
+    getStatsValues: getStats
   };
 })();
+
+const characters = [];
+
+const addCharacter = (character) => {
+  characters.push(character);
+}
 
 submitButton.addEventListener('click', (event) => {
   event.preventDefault();
 
+  let characterSecondClass = null;
+  let characterSecondClassLevel = null;
+
   if (characterCreation.isMulticlass()) {
-    characterCreation.getCharacterSecondClass();
-    characterCreation.getCharacterSecondClassLevel();
+    characterSecondClass = characterCreation.getCharacterSecondClass();
+    console.log(characterSecondClass);
+    characterSecondClassLevel = characterCreation.getCharacterSecondClassLevel();
+    console.log(characterSecondClassLevel);
   }
   characterCreation.getStatsValues();
 
@@ -306,5 +317,9 @@ submitButton.addEventListener('click', (event) => {
     race: characterCreation.getCharacterRace(),
     class: characterCreation.getCharacterClass(),
     classLevel: characterCreation.getCharacterClassLevel(),
+    secondClass: characterSecondClass,
+    secondClassLevel: characterSecondClassLevel
   };
+
+  addCharacter(character);
 });
