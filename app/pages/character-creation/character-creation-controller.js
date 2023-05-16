@@ -301,13 +301,12 @@ submitButton.addEventListener('click', (event) => {
   event.preventDefault();
 
   let characterSecondClass = null;
+
   let characterSecondClassLevel = null;
 
   if (characterCreation.isMulticlass()) {
     characterSecondClass = characterCreation.getCharacterSecondClass();
-    console.log(characterSecondClass);
     characterSecondClassLevel = characterCreation.getCharacterSecondClassLevel();
-    console.log(characterSecondClassLevel);
   }
   characterCreation.getStatsValues();
 
