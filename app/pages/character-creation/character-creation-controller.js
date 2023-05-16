@@ -1,13 +1,5 @@
 'use strict';
 
-// Stat screen
-
-const statsForm = document.getElementById('stats-form');
-
-const perksForms = document.getElementById('perks-form');
-
-const submitButton = document.getElementById('submitBtn');
-
 // General Controller
 const characterCreation = (function () {
   const getName = () => {
@@ -87,9 +79,12 @@ const addCharacter = (character) => {
   characters.push(character);
 }
 
+const submitButton = document.getElementById('submitBtn');
+
 submitButton.addEventListener('click', (event) => {
   event.preventDefault();
 
+  submitCharacter();
   let characterSecondClass = null;
 
   let characterSecondClassLevel = null;
