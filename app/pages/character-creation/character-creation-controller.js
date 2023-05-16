@@ -1,5 +1,13 @@
 'use strict';
 
+// Only to test. Add "preventDefault to every form"
+const nameForm = document.getElementById('name-form');
+
+nameForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+  console.log('Form submitted');
+});
+
 // General Controller
 const characterCreation = (function () {
   const getName = () => {
@@ -79,12 +87,25 @@ const addCharacter = (character) => {
   characters.push(character);
 }
 
+const validateForms = () => {
+  const nameForm = document.getElementById('name-form');
+  console.log(nameForm.elements[0].value);
+  if (nameForm.elements[0].value === "") {
+    console.log("Name is empty!");
+    return false;
+  }
+
+  return true;
+}
+
 const submitButton = document.getElementById('submitBtn');
 
 submitButton.addEventListener('click', (event) => {
   event.preventDefault();
 
-  submitCharacter();
+  const isValid = validateForms();
+
+  // submitCharacter();
   let characterSecondClass = null;
 
   let characterSecondClassLevel = null;
