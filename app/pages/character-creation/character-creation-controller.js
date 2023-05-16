@@ -3,7 +3,7 @@
 // Only to test. Add "preventDefault to every form"
 const nameForm = document.getElementById('name-form');
 
-nameForm.addEventListener('submit', function(event) {
+nameForm.addEventListener('submit', function (event) {
   event.preventDefault();
   console.log('Form submitted');
 });
@@ -77,7 +77,7 @@ const characterCreation = (function () {
     isMulticlass: isMulticlass,
     getCharacterSecondClass: getCharacterSecondClass,
     getCharacterSecondClassLevel: getCharacterSecondClassLevel,
-    getStatsValues: getStats
+    getStatsValues: getStats,
   };
 })();
 
@@ -85,18 +85,18 @@ const characters = [];
 
 const addCharacter = (character) => {
   characters.push(character);
-}
+};
 
 const validateForms = () => {
   const nameForm = document.getElementById('name-form');
   console.log(nameForm.elements[0].value);
-  if (nameForm.elements[0].value === "") {
-    console.log("Name is empty!");
+  if (nameForm.elements[0].value === '') {
+    console.log('Name is empty!');
     return false;
   }
 
   return true;
-}
+};
 
 const submitButton = document.getElementById('submitBtn');
 
@@ -112,7 +112,8 @@ submitButton.addEventListener('click', (event) => {
 
   if (characterCreation.isMulticlass()) {
     characterSecondClass = characterCreation.getCharacterSecondClass();
-    characterSecondClassLevel = characterCreation.getCharacterSecondClassLevel();
+    characterSecondClassLevel =
+      characterCreation.getCharacterSecondClassLevel();
   }
   characterCreation.getStatsValues();
 
@@ -123,7 +124,7 @@ submitButton.addEventListener('click', (event) => {
     class: characterCreation.getCharacterClass(),
     classLevel: characterCreation.getCharacterClassLevel(),
     secondClass: characterSecondClass,
-    secondClassLevel: characterSecondClassLevel
+    secondClassLevel: characterSecondClassLevel,
   };
 
   addCharacter(character);
