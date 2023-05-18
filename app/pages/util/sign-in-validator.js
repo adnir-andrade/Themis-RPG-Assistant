@@ -9,29 +9,29 @@ class SignInValidator extends formsUtils.FormValidator {
   }
 
   validateForm() {
-    if (!(password.value === confirmPassword.value)) {
-      confirmPassword.setCustomValidity('Password doesn\'t match. Please verify.');
-      return;
+    if (password.value === confirmPassword.value) {
+      super.redirectTo();
     }
-  
-    super.redirectTo();
+    
+    confirmPassword.setCustomValidity('Password doesn\'t match. Please verify.');
+    return;
   }
 
   verifyPassword() {
     password.addEventListener('input', (event) => {
-      event.target.setCustomValidity(
-        event.target.value.length < 8
-          ? 'Your password must contain at least 8 characters.'
-          : ''
-      );
+      if (event.target.value.length < 8) {
+        event.target.setCustomValidity('Your password must contain at least 8 characters.');
+      } else {
+        event.target.setCustomValidity('');
+      }
     });
     
     confirmPassword.addEventListener('input', (event) => {
-      event.target.setCustomValidity(
-        event.target.value.length < 8
-          ? 'Your password confirmation also needs to be 8 characters long.'
-          : ''
-      );
+      if (event.target.value.length < 8) {
+        event.target.setCustomValidity('Your password confirmation also needs to be 8 characters long.');
+      } else {
+        event.target.setCustomValidity('');
+      }
     });
   }
 }
