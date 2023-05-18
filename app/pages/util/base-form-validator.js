@@ -10,15 +10,10 @@ export class FormValidator {
 
   init() {
     this.form.addEventListener('submit', (event) => {
-      console.log("AHHHHHHH");
       event.preventDefault();
-      //window.alert('A ' + event.type + ' was initiated.');
+      window.alert('A ' + event.type + ' was initiated.'); // Try to change this to something less annoying
       this.validateForm();
     });
-  }
-
-  getPassword() {
-    return this.password;
   }
 
   validateForm() {
