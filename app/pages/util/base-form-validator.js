@@ -10,6 +10,7 @@ export class FormValidator {
 
   init() {
     this.form.addEventListener('submit', (event) => {
+      console.log("AHHHHHHH");
       event.preventDefault();
       //window.alert('A ' + event.type + ' was initiated.');
       this.validateForm();

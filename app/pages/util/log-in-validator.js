@@ -10,17 +10,15 @@ class LogInValidator extends formsUtils.FormValidator {
     if (
       !this.verifyEmail(this.email.value) ||
       !this.verifyPassword(this.password.value)
-    )
+    ) {
       return;
+    }
 
-    this.form.submit();
-    console.log('redirect!');
-    this.redirectTo();
+    super.redirectTo();
   }
 
   verifyPassword(password) {
     if (!super.validatePasswordLength(password)) {
-      window.alert('Please, insert a password with at least 8 characters.');
       return false;
     }
     return true;
