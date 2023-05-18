@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-import logInUtils from "../util/log-in-validator.js";
+import logInUtils from '../util/log-in-validator.js';
 
 const logIn = new logInUtils.LogInValidator();
 

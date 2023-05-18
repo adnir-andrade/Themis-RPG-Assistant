@@ -94,7 +94,6 @@ const validateForms = () => {
     console.log('Name is empty!');
     return false;
   }
-
   return true;
 };
 

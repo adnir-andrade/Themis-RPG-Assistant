@@ -1,5 +1,5 @@
-"use strict";
-import formsUtils from "./base-form-validator.js";
+'use strict';
+import formsUtils from './base-form-validator.js';
 
 class LogInValidator extends formsUtils.FormValidator {
   constructor() {
@@ -8,7 +8,7 @@ class LogInValidator extends formsUtils.FormValidator {
 
   verifyPassword(password) {
     if (!super.validatePasswordLength(password)) {
-      window.alert("Please, insert a password with at least 8 characters.");
+      window.alert('Please, insert a password with at least 8 characters.');
       return false;
     }
     return true;

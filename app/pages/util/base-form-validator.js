@@ -1,19 +1,23 @@
-"use strict";
+'use strict';
 // Instalar AUTO-IMPORT no VSCODE
 export class FormValidator {
   constructor() {
-    this.form = document.getElementById("form");
-    this.email = form.elements["email"];
-    this.password = document.getElementById("password");
+    this.form = document.getElementById('form');
+    this.email = form.elements['email'];
+    this.password = document.getElementById('password');
     this.MINIMUM_LENGTH = 8;
   }
 
   init() {
-    this.form.addEventListener("submit", (event) => {
+    this.form.addEventListener('submit', (event) => {
       event.preventDefault();
-      window.alert("A " + event.type + " was initiated.");
+      //window.alert('A ' + event.type + ' was initiated.');
       this.validateForm();
     });
+  }
+
+  getPassword() {
+    return this.password;
   }
 
   validateForm() {
@@ -24,12 +28,12 @@ export class FormValidator {
       return;
 
     this.form.submit();
-    console.log("redirect!");
+    console.log('redirect!');
     this.redirectTo();
   }
 
   verifyPassword(password) {
-    throw new Error("verifyPassword() must be implemented.");
+    throw new Error('verifyPassword() must be implemented.');
   }
 
   validatePasswordLength(password) {
@@ -42,7 +46,7 @@ export class FormValidator {
 
   verifyEmail(email) {
     if (!this.isFormatValid(email) ?? false) {
-      window.alert("Please, insert a valid e-mail address.");
+      window.alert('Please, insert a valid e-mail address.');
       return false;
     }
 
@@ -61,7 +65,7 @@ export class FormValidator {
   }
 
   redirectTo() {
-    window.location.href = "/app/pages/select-campaign/select-campaign.html";
+    window.location.href = '/app/pages/select-campaign/select-campaign.html';
   }
 }
 
