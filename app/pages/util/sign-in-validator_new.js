@@ -4,11 +4,10 @@ import formsUtils from './base-form-validator.js';
 class SignInValidator extends formsUtils.FormValidator {
   constructor() {
     super();
-    this.confirmPassword = document.getElementById('confirmPassword');
+    this.confirmPassword = super.form.elements[2];
   }
 
   verifyPassword() {
-    console.log(super.getPassword().value);
     super.getPassword().addEventListener('invalid', (event) => {
       this.getPassword().setCustomValidity(
         'Your password must contain at least 8 characters.'

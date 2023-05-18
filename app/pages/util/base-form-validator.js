@@ -21,15 +21,7 @@ export class FormValidator {
   }
 
   validateForm() {
-    if (
-      !this.verifyEmail(this.email.value) ||
-      !this.verifyPassword(this.password.value)
-    )
-      return;
-
-    this.form.submit();
-    console.log('redirect!');
-    this.redirectTo();
+    throw new Error('validateForm() must be implemented.');
   }
 
   verifyPassword(password) {
