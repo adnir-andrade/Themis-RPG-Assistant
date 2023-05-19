@@ -1,13 +1,5 @@
 'use strict';
 
-// Only to test. Add "preventDefault to every form"
-const nameForm = document.getElementById('name-form');
-
-nameForm.addEventListener('submit', function (event) {
-  event.preventDefault();
-  console.log('Form submitted');
-});
-
 // General Controller
 const characterCreation = (function () {
   const getName = () => {
@@ -128,3 +120,11 @@ submitButton.addEventListener('click', (event) => {
 
   addCharacter(character);
 });
+
+function changeFocus(event) {
+  event.preventDefault();
+
+  const characterDropdown = document.getElementById('character-dropdown');
+
+  characterDropdown.focus();
+}

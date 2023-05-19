@@ -11,7 +11,7 @@ export class FormValidator {
   init() {
     this.form.addEventListener('submit', (event) => {
       event.preventDefault();
-      window.alert('A ' + event.type + ' was initiated.'); // Try to change this to something less annoying
+      //window.alert('A ' + event.type + ' was initiated.'); // Try to change this to something less annoying
       this.validateForm();
     });
   }

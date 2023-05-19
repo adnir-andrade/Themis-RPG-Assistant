@@ -1,0 +1,92 @@
+*** Primeira etapa ***
+
+Caixas de Diálogo
+	prompt	//	Select.table - Criacao de campanha
+	alert	// sign-in & log-in // password & email validation
+	confirm	// Select.table - Criacao de campanha
+
+Temporizadores
+	setInterval / Usada no logo
+	setTimeout // Usada tambem na logo porque foi o unico lugar que funcionou, meu deus que diabo
+
+Funções
+	Função anônima com argumento // Character creation, organizando as races, tambem usada na main em conjunto com o timeout
+	Função anônima sem argumento // Varios eventListeners usam funcao anonima na sua declaracao - Usado em campaign-view-controller para pegar a posicao
+	Função anônima com retorno // Implementado em campaign-view para gerar nova posicao.
+	Função auto-executável - não será aceita a mesma do Module Pattern // Usada para colocar atalho na pagina de Character Creation
+	Função com nome // Varias funcoes em log-in & sign-in
+	Função aninhada/local - declarar uma função dentro de outra // Refatorado formatString para ser funcao aninhada de validacao (select Campaign).
+	Passagem de uma função como parâmetro para outra função - ambas as funções precisam ser implementadas pelo aluno // Character Creation, criando dinamicamente os niveis
+	Função Flecha - Arrow Function	// log-in & sign-in, e-mail validation
+
+Eventos
+	Evento de carregamento do documento - onload // Adicionado no main / Character creation (switch)
+	Evento de movimento do mouse // Select.table - Nos botoes de utilidade
+	Evento de teclado - usar charCode ou keyCode // Character Creation. Arrow Key Up virou atalho para selecionar o campo para digitar o nome do personagem.
+	Eventos de formulário - usar onfocus e onblur  // Character Creation, ficou lindos
+	Imprimir alguma propriedade/atributo do objeto event recebido como parâmetro na função tratadora de evento // Dentro do init() das validacoes de sign-in e log-in.
+
+Acesso aos elementos DOM do HTML
+	Via referência DOM pelo id do elemento HTML - acesso sem uso do getElementByID ou querySelector, o id do objeto DOM é o próprio nome da variável // Feito em character-creation, 2nd level
+	Via getElementByID() // Usado ja no log-in & sign in
+	Via getElementsByName()	// Usado em select-table para selecionar o "table-holder", que comporta todos os botoes.
+	Via getElementsByTagName() // Usado no main, para a logo.
+	Via seletores CSS usados na função querySelector() ou querySelectorAll()	// Select.table - Nos botoes de utilidade
+
+Tratadores de Evento
+	Especificar o tratador de evento inline - registro do evento no HTML // Acho que ta certo? No Main, os dois botoes.
+	Especificar o tratador de evento no modo tradicional - registro do evento no JS com prefixo on via atributo de um objeto DOM // Implementado no main
+	Especificar o tratador de evento com a função addEventListener - registro do evento no JS // Implementado em Character Creation, o listener do switch
+	Usar o operador this em funções tratadoras de eventos. // Varios lugares, principalmente na heranca, mas tambem no switch de character creation
+
+Objetos Nativos
+	Usar pelo menos 3 métodos de manipulação de array // 1 - Organizado em ordem alfabetica (character-creation, races) && 2 - Adicionando um membro com push (select-campaign) && slice (que foi escolhido no local do outro metodo de manipulacao de string
+	Usar laço de repetição (for..in ou for..of ou forEach) // Select.table - Nos botoes de utilidade
+	Usar pelo menos 3 métodos para manipulação de string // No formatString usado para estilizar os titulos eh utilizado toLowerCase(), toUpperCase(), () e concat()
+	String Template - a String com crase e ${} // Implementado na campaign-selection
+	Manipulação do CSS de forma nativa via atributo style e classList // Select.table - Botoes de utilidade
+
+Objetos
+	Criar objeto usando função construtora ou notação literal // Utilizado nas classes de log-in e sign-in
+	(Obrigatório) Criar objetos a partir da definição de classes do ES6 - a classe precisa ser definida em arquivo separado, sendo o nome do arquivo em letras minúsculas no estilo dashed-case e nome da classe em UpperCamelCase //  Utilizado nas classes de log-in e sign-in
+	Usar herança prototipal nativa ou herança de classes do ES6	// Utilizado nas classes de log-in e sign-in
+	
+	
+____________________________________________________________________________________________
+*** Segunda Etapa ***
+
+Qualidade do código
+	Usar um Style Guide - apresentar o uso de pelo menos 10 regras do style escolhido (sugerido AirBnb)
+		// Utilizado, documentado em txt
+	Usar um Lint - corrigir todos os problemas informados pelo lint (sugerido JSHint - usar o arquivo .jshintrc disponível no moodle)
+		// Utilizado, documentado em txt
+	Usar strict mode - em todos os arquivos
+		// Utilizado em todos os arquivos
+	Usar Module Pattern com função auto-executável ou o conceito de módulo do ES6 com operadores export e import
+		// Utilizado em second-screen-controller.js
+	Usar pasta assets e subpastas resources e libraries para organizar o código
+		// Alterado, verificar com professor
+	Usar let ou const ao invés de var
+		// Utilizado
+	Nomes de arquivos HTML, JS e CSS minúsculos e separados por hífen (dashed-case)
+		// Utilizado
+	
+Formulário
+	Validação de formulário com onsubmit usando os métodos tradicionais - é a fase executada após a validação via HTML5
+		// Utilizado em character-creation.html e character-creation-controller.js (<form id="name-form" onsubmit="return changeFocus(event)">)
+	Validação de formulário com HTML5 API
+		// Log-in & Sign-In
+		Customizar as mensagens nos balões de mensagem
+			// Log-in & Sign-in, sign-in-validator.js
+		Usar os atributos de validação dos inputs - required ou type="email" ou outros
+			// Log-in & Sign-in
+		Usar expressões regulares para validação - usar no atributo pattern do respectivo input 
+			// Sign-in
+	Ler e escrever em elementos input com a propriedade value
+		// Sign-in, sign-in-validator.js, para apagar a senha e exibir erro.
+	Alterar o conteúdo de elementos div ou p com a propriedade innerHTML ou textContent
+		// Character-creation e select-campaign
+	Manipulação de elemento de listagem, como checkbox, radio ou select
+		// Character-creation, switch de multi-class
+	Acesso aos elementos de um formulário via hierarquia (caminho) de objetos, ou seja, array forms e elements
+		// sign-in-validator, character-creation
