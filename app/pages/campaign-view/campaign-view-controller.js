@@ -21,3 +21,5 @@ characterButton.addEventListener("click", function move() {
   }
   isSelected = !isSelected;
 });
+
+$("p").addClass("selected");
