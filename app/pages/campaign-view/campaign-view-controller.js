@@ -10,15 +10,15 @@ const newPosition = (function () {
 })();
 
 let isSelected = false;
-$( ".hidden-content" ).hide();
+$(".hidden-content").hide();
 
-$( ".button-slider" ).on( "click", function() {
-  if ( $( ".hidden-content" ).first().is( ":hidden" ) ) {
-    $( ".hidden-content" ).slideDown( "slow" );
+$(".button-slider").on( "click", function() {
+  if ($(this).next().is( ":hidden" ) ) {
+    $(this).next().slideDown( "slow" );
   } else {
-    $( ".hidden-content" ).slideUp( "slow" );
+    $(this).next().slideUp( "slow" );
   }
-  });
+});
 
 
 // Fancy Buttons again, but this with jQuery. TODO: Refactor to Util
