@@ -10,12 +10,13 @@ const newPosition = (function () {
 })();
 
 let isSelected = false;
+$( ".hidden-content" ).hide();
 
 $( ".button-slider" ).on( "click", function() {
   if ( $( ".hidden-content" ).first().is( ":hidden" ) ) {
     $( ".hidden-content" ).slideDown( "slow" );
   } else {
-    $( ".hidden-content" ).hide();
+    $( ".hidden-content" ).slideUp( "slow" );
   }
   });
 
