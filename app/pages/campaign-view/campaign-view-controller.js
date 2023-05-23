@@ -11,37 +11,16 @@ const newPosition = (function () {
 
 let isSelected = false;
 
-characterButton.addEventListener("click", function move() {
-  if (isSelected) {
-    this.style.position = "static";
-    this.style.left = `${originalPosition}px`;
+$( ".button-slider" ).on( "click", function() {
+  if ( $( ".hidden-content" ).first().is( ":hidden" ) ) {
+    $( ".hidden-content" ).slideDown( "slow" );
   } else {
-    this.style.position = "relative";
-    this.style.left = `${newPosition}px`;
+    $( ".hidden-content" ).hide();
   }
-  isSelected = !isSelected;
-});
+  });
 
-// Fancy Buttons again. TODO: Refactor to Util
 
-// const customButtons = document.querySelectorAll(".custom-button");
-
-// customButtons.forEach((button) => {
-//   button.addEventListener("mouseover", () => {
-//     button.style.mixBlendMode = "overlay";
-//     button.style.background =
-//       "radial-gradient(circle at center, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%)";
-//   });
-// });
-
-// customButtons.forEach((button) => {
-//   button.addEventListener("mouseout", () => {
-//     button.style.mixBlendMode = "";
-//     button.style.background = "";
-//   });
-// });
-
-// jQuery updates:
+// Fancy Buttons again, but this with jQuery. TODO: Refactor to Util
 $(".custom-button").each(function() {
   $(this).on("mouseover", () => {
     $(this).css({
