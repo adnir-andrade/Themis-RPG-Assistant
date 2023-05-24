@@ -90,3 +90,30 @@ Formulário
 		// Character-creation, switch de multi-class
 	Acesso aos elementos de um formulário via hierarquia (caminho) de objetos, ou seja, array forms e elements
 		// sign-in-validator, character-creation
+____________________________________________________________________________________________
+*** Terceira Etapa ***
+
+jQuery
+
+Uso de seletores CSS - id, classe e tag
+	// 
+Uso de seletores hierárquicos estáticos - ancestral/descendente, pai/filho, anterior/próximo
+Uso de seletores hierárquicos dinâmicos - parent/children/next
+Efeitos fade ou slide
+Especificar o tratador de algum evento via jQuery
+Manipulação do CSS via função css() e addClass()/removeClass()
+Manipulação do conteúdo de um input e div usando jQuery
+Aplicar um plugin do jQuery (por exemplo, jQuery Mask Plugin)
+
+Web Storage
+
+LocalStorage ou SessionStorage
+Leitura e escrita de dados simples
+Leitura e escrita de JSON
+
+Ajax com Backend
+
+Requisições AJAX para uma implementação funcional do backend em ExpressJS na plataforma Node
+(Obrigatório) Requisições AJAX para uma API Fake - JSON Server 
+Requisições AJAX para uma API Rest pública qualquer (Busca CEP API ou IBGE API ou outra).
+	// ViaCEP || CPF

@@ -1,4 +1,5 @@
 "use strict";
+
 const characterButton = document.getElementById("character-1");
 
 const originalPosition = characterButton.offsetLeft;
@@ -39,3 +40,4 @@ $(".custom-button").each(function() {
     })
   });
 });
+
