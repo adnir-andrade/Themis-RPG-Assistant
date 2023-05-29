@@ -21,7 +21,7 @@ $('.button-slider').on('click', function () {
   }
 });
 
-// Fancy Buttons again, but this with jQuery. TODO: Refactor to Util
+// Fancy Buttons again, but this one with jQuery. TODO: Refactor to Util
 $('.custom-button').each(function () {
   $(this).on('mouseover', () => {
     $(this).css({
@@ -40,11 +40,3 @@ $('.custom-button').each(function () {
     });
   });
 });
-
-const modalTrigger = function () {
-  uglipop({
-    class: 'test-modal',
-    source: 'div', //html?
-    content: 'modalDemo',
-  });
-};

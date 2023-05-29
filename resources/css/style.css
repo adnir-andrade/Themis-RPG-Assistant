@@ -352,3 +352,7 @@ button {
 .character-name-input:required:invalid {
   color: rgb(255, 211, 6);
 }
+
+.invisible {
+  display: none;
+}

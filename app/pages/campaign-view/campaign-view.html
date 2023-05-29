@@ -11,11 +11,15 @@
       integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
       crossorigin="anonymous"
     />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css"
+      type="text/css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/resources/css/style.css" />
@@ -144,13 +148,21 @@
             <div
               class="d-flex flex-row mb-3 align-items-center justify-content-evenly"
             >
-              <button class="p-2 semi-transp custom-button" id="sort">
+              <button
+                class="p-2 semi-transp custom-button"
+                id="sort"
+                data-featherlight="<div>Placeholder for Sort Screen</div>"
+              >
                 <img src="/resources/icons/sort.svg" />
               </button>
               <button class="p-2 semi-transp custom-button" id="add">
                 <img src="/resources/icons/add.svg" />
               </button>
-              <button class="p-2 semi-transp custom-button" id="settings">
+              <button
+                class="p-2 semi-transp custom-button"
+                id="settings"
+                data-featherlight="<div>Placeholder for Config Screen</div>"
+              >
                 <img src="/resources/icons/settings.svg" />
               </button>
             </div>
@@ -160,12 +172,22 @@
     </main>
 
     <footer>
-      <div class="test">
+      <div>
         <div class="gradient rectangleInverted"></div>
       </div>
       <div class="t-mb5"></div>
     </footer>
 
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
     <script src="campaign-view-controller.js"></script>
   </body>
 </html>
