@@ -96,7 +96,7 @@ jQuery
 - [x] Especificar o tratador de algum evento via jQuery
 - [x] Manipulação do CSS via função css() e addClass()/removeClass()
 - [ ] Manipulação do conteúdo de um input e div usando jQuery
-- [ ] Aplicar um plugin do jQuery (por exemplo, jQuery Mask Plugin)
+- [x] Aplicar um plugin do jQuery (por exemplo, jQuery Mask Plugin)
 
 Web Storage
 
@@ -107,5 +107,5 @@ Web Storage
 Ajax com Backend
 
 - [ ] Requisições AJAX para uma implementação funcional do backend em ExpressJS na plataforma Node
-- [ ] (Obrigatório) Requisições AJAX para uma API Fake - JSON Server 
+- [ ] (Obrigatório) Requisições AJAX para uma API Fake - JSON Server
 - [ ] Requisições AJAX para uma API Rest pública qualquer (Busca CEP API ou IBGE API ou outra).

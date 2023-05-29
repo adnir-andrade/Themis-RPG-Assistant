@@ -1,16 +1,5 @@
 'use strict';
 
-const characterButton = document.getElementById('character-1');
-
-const originalPosition = characterButton.offsetLeft;
-
-const newPosition = (function () {
-  const OFFSET = 0.4;
-
-  return originalPosition - originalPosition * OFFSET;
-})();
-
-let isSelected = false;
 $('.hidden-content').hide();
 
 $('.button-slider').on('click', function () {
