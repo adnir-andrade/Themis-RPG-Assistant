@@ -1,9 +1,12 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 
-// app.get('/', (req, res) => {
-//   res.send(`Welcome`);
-// });
+app.get('/', (req, res) => {
+  const filePath = path.join(__dirname, 'app', 'pages', 'main', 'main.html');
+
+  res.sendFile(filePath);
+});
 
 // app.get('/cats/', (req, res) => {
 //   res.send(`Cats`);
