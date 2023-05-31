@@ -356,3 +356,7 @@ button {
 .invisible {
   display: none;
 }
+
+#random-name > img {
+  width: 80%;
+}

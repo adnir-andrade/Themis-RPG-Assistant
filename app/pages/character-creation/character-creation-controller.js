@@ -128,3 +128,39 @@ function changeFocus(event) {
 
   characterDropdown.focus();
 }
+
+const requestRandomName = () => {
+  return new Promise(function (resolve, reject) {
+    $.ajax({
+      url: 'https://randomuser.me/api/?inc=name',
+      dataType: 'json',
+      success: function (randomuser) {
+        resolve(randomuser.results[0]);
+      },
+      error: function (error) {
+        reject(error);
+      },
+    });
+  });
+};
+
+const changeName = (firstName, lastName) => {
+  $('#character-name').val(firstName + ' ' + lastName);
+};
+
+$('#random-name').click(function () {
+  let firstName;
+  let lastName;
+
+  requestRandomName()
+    .then((randomuser) => {
+      firstName = randomuser.name.first;
+      lastName = randomuser.name.last;
+    })
+    .catch((error) => {
+      console.error('There was an annoying error:', error);
+    })
+    .then(() => {
+      changeName(firstName, lastName);
+    });
+});

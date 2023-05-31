@@ -65,9 +65,9 @@ app.get('/character-creation', (req, res) => {
   res.sendFile(path.join(filePath, 'character-creation.html'));
 });
 
-app.get('/*', (req, res) => {
-  const filePath = path.join(__dirname, 'app', 'pages', 'main');
+// app.get('/*', (req, res) => {
+//   const filePath = path.join(__dirname, 'app', 'pages', 'main');
 
-  app.use(express.static(filePath));
-  res.sendFile(path.join(filePath, 'main.html'));
-});
+//   app.use(express.static(filePath));
+//   res.sendFile(path.join(filePath, 'main.html'));
+// });
