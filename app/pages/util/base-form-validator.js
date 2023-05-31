@@ -53,7 +53,7 @@ export class FormValidator {
   }
 
   redirectTo() {
-    window.location.href = '/app/pages/select-campaign/select-campaign.html';
+    window.location.href = '/select-campaign';
   }
 }
 
