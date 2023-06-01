@@ -3,6 +3,8 @@ const path = require('path');
 const app = express();
 const mongoose = require('mongoose');
 
+const Character = require('./app/models/character');
+
 // getting-started.js
 main().catch((err) => console.log(err));
 

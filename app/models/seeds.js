@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-const Character = require('./app/models/character');
+// const Character = require('./app/models/character');
+const Character = require('./character');
 
 // getting-started.js
 main().catch((err) => console.log(err));
@@ -16,4 +17,14 @@ const seedling = new Character({
   characterLevel: 12,
   race: 'Dwarf',
   baseClass: 'Paladin',
+  baseClassLevel: 7,
+  secondClass: 'Assassin',
+  secondClassLevel: 5,
 });
+
+seedling
+  .save()
+  .then((seedling) => {
+    console.log(seedling);
+  })
+  .catch((err) => console.log(err));
