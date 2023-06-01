@@ -27,6 +27,8 @@ const characterSchema = new mongoose.Schema({
       'Cleric',
       'Barbarian',
       'Paladin',
+      'Ranger',
+      'Bard',
     ],
   },
   baseClassLevel: {
@@ -45,6 +47,8 @@ const characterSchema = new mongoose.Schema({
       'Cleric',
       'Barbarian',
       'Paladin',
+      'Ranger',
+      'Bard',
     ],
   },
   secondClassLevel: {

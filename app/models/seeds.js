@@ -12,19 +12,55 @@ async function main() {
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
-const seedling = new Character({
-  name: 'Lethnox Keturak',
-  characterLevel: 12,
-  race: 'Dwarf',
-  baseClass: 'Paladin',
-  baseClassLevel: 7,
-  secondClass: 'Assassin',
-  secondClassLevel: 5,
-});
+const characters = [
+  {
+    name: 'Lethnox Keturak',
+    characterLevel: 12,
+    race: 'Dwarf',
+    baseClass: 'Paladin',
+    baseClassLevel: 7,
+    secondClass: 'Assassin',
+    secondClassLevel: 5,
+  },
+  {
+    name: 'Yzgart',
+    characterLevel: 8,
+    race: 'Orc',
+    baseClass: 'Ranger',
+    baseClassLevel: 8,
+  },
+  {
+    name: 'Haotran Ridan',
+    characterLevel: 14,
+    race: 'Elf',
+    baseClass: 'Assassin',
+    baseClassLevel: 9,
+    secondClass: 'Bard',
+    secondClassLevel: 5,
+  },
+];
 
-seedling
-  .save()
-  .then((seedling) => {
-    console.log(seedling);
+// const seedling = new Character({
+//   name: 'Lethnox Keturak',
+//   characterLevel: 12,
+//   race: 'Dwarf',
+//   baseClass: 'Paladin',
+//   baseClassLevel: 7,
+//   secondClass: 'Assassin',
+//   secondClassLevel: 5,
+// });
+
+Character.insertMany(characters)
+  .then((res) => {
+    console.log(res);
   })
-  .catch((err) => console.log(err));
+  .catch((err) => {
+    console.log(err);
+  });
+
+// seedling
+//   .save()
+//   .then((seedling) => {
+//     console.log(seedling);
+//   })
+//   .catch((err) => console.log(err));
