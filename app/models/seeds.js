@@ -40,16 +40,6 @@ const characters = [
   },
 ];
 
-// const seedling = new Character({
-//   name: 'Lethnox Keturak',
-//   characterLevel: 12,
-//   race: 'Dwarf',
-//   baseClass: 'Paladin',
-//   baseClassLevel: 7,
-//   secondClass: 'Assassin',
-//   secondClassLevel: 5,
-// });
-
 Character.insertMany(characters)
   .then((res) => {
     console.log(res);
@@ -57,10 +47,3 @@ Character.insertMany(characters)
   .catch((err) => {
     console.log(err);
   });
-
-// seedling
-//   .save()
-//   .then((seedling) => {
-//     console.log(seedling);
-//   })
-//   .catch((err) => console.log(err));

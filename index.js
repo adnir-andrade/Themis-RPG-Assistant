@@ -77,6 +77,12 @@ app.get('/character-creation', (req, res) => {
   res.sendFile(path.join(filePath, 'character-creation.html'));
 });
 
+app.get('/show-characters', async (req, res) => {
+  const characters = await Character.find({});
+  res.send('Loading characters...');
+  console.log(characters);
+});
+
 // app.get('/*', (req, res) => {
 //   const filePath = path.join(__dirname, 'app', 'pages', 'main');
 
