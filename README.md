@@ -90,7 +90,7 @@ Formulário
 jQuery
 
 - [x] Uso de seletores CSS - id, classe e tag
-- [ ] Uso de seletores hierárquicos estáticos - ancestral/descendente, pai/filho, anterior/próximo
+- [x] Uso de seletores hierárquicos estáticos - ancestral/descendente, pai/filho, anterior/próximo
 - [x] Uso de seletores hierárquicos dinâmicos - parent/children/next
 - [x] Efeitos fade ou slide
 - [x] Especificar o tratador de algum evento para um elemento DOM via jQuery - deve ser um evento diferente do ready
