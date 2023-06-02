@@ -100,12 +100,12 @@ jQuery
 
 Web Storage
 
-- [ ] LocalStorage ou SessionStorage
+- [ ] LocalStorage ou SessionStorage / Criar e guardar um dado em um Cookie
 - [ ] Leitura e escrita de dados simples
-- [ ] Leitura e escrita de JSON
+- [x] Leitura e escrita de JSON
 
 Ajax com Backend
 
-- [ ] Requisições AJAX para uma implementação funcional do backend em ExpressJS na plataforma Node
+- [x] Requisições AJAX para uma implementação funcional do backend em ExpressJS na plataforma Node
 - [ ] (Obrigatório) Requisições AJAX para uma API Fake - JSON Server
 - [x] Requisições AJAX para uma API Rest pública qualquer (Busca CEP API ou IBGE API ou outra).
