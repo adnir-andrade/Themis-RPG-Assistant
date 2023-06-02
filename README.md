@@ -93,16 +93,16 @@ jQuery
 - [ ] Uso de seletores hierárquicos estáticos - ancestral/descendente, pai/filho, anterior/próximo
 - [x] Uso de seletores hierárquicos dinâmicos - parent/children/next
 - [x] Efeitos fade ou slide
-- [x] Especificar o tratador de algum evento via jQuery
+- [x] Especificar o tratador de algum evento para um elemento DOM via jQuery - deve ser um evento diferente do ready
 - [x] Manipulação do CSS via função css() e addClass()/removeClass()
 - [x] Manipulação do conteúdo de um input e div usando jQuery
 - [x] Aplicar um plugin do jQuery (por exemplo, jQuery Mask Plugin)
 
 Web Storage
 
-- [ ] LocalStorage ou SessionStorage / Criar e guardar um dado em um Cookie
-- [ ] Leitura e escrita de dados simples
-- [x] Leitura e escrita de JSON
+- [ ] Leitura e escrita de dados simples - dados primivos como string, number, boolean
+- [x] Leitura e escrita de JSON - dado transformado a partir de um objet
+- [ ] Criar e atribuir um dado em um Cookie - opcionalmente, ler e apresentar o valor na tela
 
 Ajax com Backend
 

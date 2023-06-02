@@ -1,41 +1,41 @@
-"use strict";
+'use strict';
 // Util buttons fancy hover
-const customButtons = document.querySelectorAll(".custom-button");
+const customButtons = document.querySelectorAll('.custom-button');
 
 customButtons.forEach((button) => {
-  button.addEventListener("mouseover", () => {
-    button.style.mixBlendMode = "overlay";
+  button.addEventListener('mouseover', () => {
+    button.style.mixBlendMode = 'overlay';
     button.style.background =
-      "radial-gradient(circle at center, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%)";
+      'radial-gradient(circle at center, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%)';
   });
 });
 
 customButtons.forEach((button) => {
-  button.addEventListener("mouseout", () => {
-    button.style.mixBlendMode = "";
-    button.style.background = "";
+  button.addEventListener('mouseout', () => {
+    button.style.mixBlendMode = '';
+    button.style.background = '';
   });
 });
 
 // Adding a new table
 class CampaignManager {
   constructor() {
-    this.campaignContainer = document.getElementsByName("table-holder");
-    this.addButton = document.getElementById("add");
-    this.sortButton = document.getElementById("sort");
+    this.campaignContainer = document.getElementsByName('table-holder');
+    this.addButton = document.getElementById('add');
+    this.sortButton = document.getElementById('sort');
     this.campaigns = [];
   }
 
   init() {
     this.addCampaign();
 
-    this.sortButton.addEventListener("click", () => {
+    this.sortButton.addEventListener('click', () => {
       this.updateButtonContent();
     });
   }
 
   addCampaign() {
-    this.addButton.addEventListener("click", () => {
+    this.addButton.addEventListener('click', () => {
       const name = this.requestName();
 
       this.pushCampaing(name);
@@ -44,14 +44,14 @@ class CampaignManager {
   }
 
   createNewButton(name) {
-    const newButton = document.createElement("button");
+    const newButton = document.createElement('button');
 
-    newButton.type = "submit";
+    newButton.type = 'submit';
     newButton.classList.add(
-      "btn",
-      "btn-dark",
-      "themys-button",
-      "themys-button-transp"
+      'btn',
+      'btn-dark',
+      'themys-button',
+      'themys-button-transp'
     );
 
     const formatString = (originalString) => {
@@ -70,9 +70,9 @@ class CampaignManager {
 
     //TODO: Change to String Template for better practices
     (function appendElements(newButton, campaignContainer) {
-      const newDiv = document.createElement("div");
+      const newDiv = document.createElement('div');
 
-      newDiv.classList.add("p-3");
+      newDiv.classList.add('p-3');
       newDiv.appendChild(newButton);
       campaignContainer.appendChild(newDiv);
     })(newButton, this.campaignContainer[0]);
@@ -81,13 +81,13 @@ class CampaignManager {
   requestName() {
     let isDecided = false;
 
-    let campaignName = "";
+    let campaignName = '';
 
     do {
-      campaignName = prompt("What shall be the name of your new Campaign?");
+      campaignName = prompt('What shall be the name of your new Campaign?');
       isDecided = confirm(
         `Are you sure want to name it ${campaignName}?`,
-        "Yes, No"
+        'Yes, No'
       );
     } while (!isDecided);
 
@@ -100,7 +100,7 @@ class CampaignManager {
 
   // Nested function
   updateButtonContent() {
-    const buttons = document.querySelectorAll(".themys-button");
+    const buttons = document.querySelectorAll('.themys-button');
 
     const formatString = (originalString) => {
       const lowerCaseString = originalString.toLowerCase();
@@ -125,3 +125,13 @@ class CampaignManager {
 const campaignManager = new CampaignManager();
 
 campaignManager.init();
+
+//TODO: Fix the bug where lightbox is opening by itself
+
+$(document).ready(function () {
+  const optionButtons = $('button img');
+  optionButtons.attr(
+    'data-featherlight',
+    '<div>Placeholder content here!</div>'
+  );
+});
