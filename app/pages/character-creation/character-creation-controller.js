@@ -73,35 +73,6 @@ const characterCreation = (function () {
   };
 })();
 
-const characters = [];
-
-const addCharacter = (character) => {
-  $.ajax({
-    url: '/store-character',
-    method: 'POST',
-    dataType: 'json',
-    data: {
-      name: character.name,
-      characterLevel: character.level,
-      race: character.race,
-      baseClass: character.class,
-      baseClassLevel: character.classLevel,
-      secondCladd: character.secondClass,
-      secondClassLevel: character.secondClassLevel,
-    },
-    success: function (response) {
-      console.log(response.message);
-      console.log('Character added successfully!');
-    },
-    error: function (error) {
-      console.error(error);
-      console.log(`Murphy's Law`);
-    },
-  });
-
-  characters.push(character);
-};
-
 const validateForms = () => {
   const nameForm = document.getElementById('name-form');
   console.log(nameForm.elements[0].value);
@@ -133,15 +104,14 @@ submitButton.addEventListener('click', (event) => {
 
   const character = {
     name: characterCreation.getName(),
-    level: characterCreation.getCharacterLevel(),
+    characterLevel: characterCreation.getCharacterLevel(),
     race: characterCreation.getCharacterRace(),
-    class: characterCreation.getCharacterClass(),
-    classLevel: characterCreation.getCharacterClassLevel(),
+    baseClass: characterCreation.getCharacterClass(),
+    baseClassLevel: characterCreation.getCharacterClassLevel(),
     secondClass: characterSecondClass,
     secondClassLevel: characterSecondClassLevel,
   };
 
-  console.log(character);
   addCharacter(character);
 });
 
@@ -189,3 +159,31 @@ $('#random-name').click(function () {
       changeName(firstName, lastName);
     });
 });
+
+const characters = [];
+
+const addCharacter = (character) => {
+  $.ajax({
+    url: '/store-character',
+    method: 'POST',
+    data: {
+      name: character.name,
+      characterLevel: character.characterLevel,
+      race: 'human',
+      baseClass: 'bard',
+      baseClassLevel: 8,
+      secondClass: null,
+      secondClassLevel: null,
+    },
+    success: function (response) {
+      console.log(response.message);
+      console.log('Character added successfully!');
+    },
+    error: function (error) {
+      console.error(error);
+      console.log(`Murphy's Law`);
+    },
+  });
+
+  characters.push(character);
+};

@@ -20,9 +20,8 @@ const seedDb = async () => {
 
 // seedDb();
 
-app.listen(7777, () => {
-  console.log('listening on port 7777');
-});
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(
   '/resources/css',
@@ -90,26 +89,43 @@ app.get('/show-characters', async (req, res) => {
 });
 
 app.post('/store-character', async (req, res) => {
+  // const pleaseWork = JSON.parse(req.body);
+  const charObject = req.body;
+  console.log(`This is where it needs to work: ` + charObject.name);
+
+  // const charObject = {
+  //   name: 'Test',
+  //   characterLevel: 5,
+  //   race: 'human',
+  //   baseClass: 'warrior',
+  //   baseClassLevel: 5,
+  //   secondClass: null,
+  //   secondClassLevel: null,
+  // };
+
+  const realChar = new Character(charObject);
+
+  console.log('Req: ' + req);
   // Retrieve the object data from the request
-  const characterData = req.body;
+  // const characterData = req.body;
+  // console.log('Character Data: ' + characterData);
 
   // Create a new document using the model and object data
-  const newCharacter = new Character(characterData);
+  // const newCharacter = new Character(characterData);
+
+  // console.log('New Character: ' + newCharacter);
 
   // Save the document to the database
-  newCharacter
+  realChar
     .save()
-    .then(function (result) {
-      console.log(result);
+    .then((res) => {
+      console.log(res);
     })
-    .catch(function (err) {
+    .catch((err) => {
       console.log(err);
     });
 });
 
-// app.get('/*', (req, res) => {
-//   const filePath = path.join(__dirname, 'app', 'pages', 'main');
-
-//   app.use(express.static(filePath));
-//   res.sendFile(path.join(filePath, 'main.html'));
-// });
+app.listen(7777, () => {
+  console.log('listening on port 7777');
+});
