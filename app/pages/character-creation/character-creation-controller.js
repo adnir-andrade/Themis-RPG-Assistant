@@ -21,7 +21,7 @@ const characterCreation = (function () {
   const getCharacterLevel = () => {
     const characterForm = document.getElementById('character-form');
 
-    return characterForm.elements[0].value;
+    return parseInt(characterForm.elements[0].value);
   };
 
   const getCharacterRace = () => {
@@ -39,7 +39,7 @@ const characterCreation = (function () {
   const getCharacterClassLevel = () => {
     const characterForm = document.getElementById('character-form');
 
-    return characterForm.elements[3].value;
+    return parseInt(characterForm.elements[3].value);
   };
 
   const isMulticlass = () => {
@@ -57,7 +57,7 @@ const characterCreation = (function () {
   const getCharacterSecondClassLevel = () => {
     const characterForm = document.getElementById('character-form');
 
-    return characterForm.elements[6].value;
+    return parseInt(characterForm.elements[6].value);
   };
 
   return {
@@ -76,6 +76,29 @@ const characterCreation = (function () {
 const characters = [];
 
 const addCharacter = (character) => {
+  $.ajax({
+    url: '/store-character',
+    method: 'POST',
+    dataType: 'json',
+    data: {
+      name: character.name,
+      characterLevel: character.level,
+      race: character.race,
+      baseClass: character.class,
+      baseClassLevel: character.classLevel,
+      secondCladd: character.secondClass,
+      secondClassLevel: character.secondClassLevel,
+    },
+    success: function (response) {
+      console.log(response.message);
+      console.log('Character added successfully!');
+    },
+    error: function (error) {
+      console.error(error);
+      console.log(`Murphy's Law`);
+    },
+  });
+
   characters.push(character);
 };
 
@@ -118,6 +141,7 @@ submitButton.addEventListener('click', (event) => {
     secondClassLevel: characterSecondClassLevel,
   };
 
+  console.log(character);
   addCharacter(character);
 });
 
@@ -129,6 +153,7 @@ function changeFocus(event) {
   characterDropdown.focus();
 }
 
+// jQuery Plugin
 const requestRandomName = () => {
   return new Promise(function (resolve, reject) {
     $.ajax({

@@ -14,6 +14,16 @@ async function main() {
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
+const seedDb = async () => {
+  await Character.deleteMany({});
+};
+
+// seedDb();
+
+app.listen(7777, () => {
+  console.log('listening on port 7777');
+});
+
 app.use(
   '/resources/css',
   express.static(path.join(__dirname, 'resources', 'css'))
@@ -30,10 +40,6 @@ app.use(
 );
 
 app.use('/util', express.static(path.join(__dirname, 'app', 'pages', 'util')));
-
-app.listen(7777, () => {
-  console.log('listening on port 7777');
-});
 
 app.get('/', (req, res) => {
   const filePath = path.join(__dirname, 'app', 'pages', 'main');
@@ -81,6 +87,24 @@ app.get('/show-characters', async (req, res) => {
   const characters = await Character.find({});
   res.send('Loading characters...');
   console.log(characters);
+});
+
+app.post('/store-character', async (req, res) => {
+  // Retrieve the object data from the request
+  const characterData = req.body;
+
+  // Create a new document using the model and object data
+  const newCharacter = new Character(characterData);
+
+  // Save the document to the database
+  newCharacter
+    .save()
+    .then(function (result) {
+      console.log(result);
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
 });
 
 // app.get('/*', (req, res) => {

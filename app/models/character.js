@@ -15,6 +15,7 @@ const characterSchema = new mongoose.Schema({
     type: String,
     required: true,
     enum: ['Human', 'Dwarf', 'Elf', 'Orc', 'Malit', 'Ramadriin'],
+    lowercase: true,
   },
   baseClass: {
     type: String,
@@ -30,6 +31,7 @@ const characterSchema = new mongoose.Schema({
       'Ranger',
       'Bard',
     ],
+    lowercase: true,
   },
   baseClassLevel: {
     type: Number,
@@ -50,6 +52,7 @@ const characterSchema = new mongoose.Schema({
       'Ranger',
       'Bard',
     ],
+    lowercase: true,
   },
   secondClassLevel: {
     type: Number,
