@@ -12,6 +12,13 @@ export class FormValidator {
     this.form.addEventListener('submit', (event) => {
       event.preventDefault();
       //window.alert('A ' + event.type + ' was initiated.'); // Try to change this to something less annoying
+
+      const emailObject = {
+        email: this.email.value,
+      };
+      const emailJson = JSON.stringify(emailObject);
+
+      document.cookie = `${email.value}; path=/`;
       this.validateForm();
     });
   }
