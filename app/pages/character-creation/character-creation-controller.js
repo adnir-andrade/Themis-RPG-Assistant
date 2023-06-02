@@ -169,11 +169,11 @@ const addCharacter = (character) => {
     data: {
       name: character.name,
       characterLevel: character.characterLevel,
-      race: 'human',
-      baseClass: 'bard',
-      baseClassLevel: 8,
-      secondClass: null,
-      secondClassLevel: null,
+      race: character.race,
+      baseClass: character.baseClass,
+      baseClassLevel: character.baseClassLevel,
+      secondClass: character.secondClass,
+      secondClassLevel: character.secondClassLevel,
     },
     success: function (response) {
       console.log(response.message);
