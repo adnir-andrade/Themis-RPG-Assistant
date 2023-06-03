@@ -115,3 +115,10 @@ const resetValueButton = document.getElementById('reset');
 resetValueButton.addEventListener('click', (event) => {
   changeStats.reset();
 });
+
+// Preset buttons
+// TODO: Implement preset buttons functionality
+
+$('button.btn-sm').each(() => {
+  $this.click;
+});
