@@ -63,7 +63,7 @@ const changeStats = (function () {
     pointsLeft.textContent = 10;
   };
 
-  //TODO: Finish implementing randomize
+  //TODO: Finish implementing randomize with code you did for the Java Project
   const randomize = () => {
     let pointsPool = 45 - 7; // Total points - 7 stats
 
@@ -85,6 +85,7 @@ const changeStats = (function () {
   };
 
   return {
+    adjustMod: adjustMod,
     increase: increase,
     decrease: decrease,
     randomize: randomize,
@@ -117,8 +118,89 @@ resetValueButton.addEventListener('click', (event) => {
 });
 
 // Preset buttons
-// TODO: Implement preset buttons functionality
 
-$('button.btn-sm').each(() => {
-  $this.click;
+$(document).ready(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+
+const getStats = () => {
+  const statField = $('.stat-bg');
+
+  const stats = [];
+
+  for (let i = 0; i < statField.length; i++) {
+    stats.push($(statField[i]).text());
+  }
+
+  return stats;
+};
+
+const getValues = () => {
+  const valueField = $('.value-bg');
+
+  const values = [];
+
+  for (let i = 0; i < valueField.length; i++) {
+    values.push($(valueField[i]).text());
+  }
+
+  return values;
+};
+
+const setPresetValues = (button, index) => {
+  $(button).text('Load preset ' + index);
+  $(button).removeAttr('data-toggle');
+  $(button).removeAttr('data-bs-original-title');
+  $(button).removeAttr('aria-describedby');
+
+  const tooltip = $(button).data('bs.tooltip');
+  if (tooltip && tooltip.isActive) {
+    $(button).tooltip('hide').tooltip('dispose');
+  }
+
+  const stats = getStats();
+
+  const values = getValues();
+
+  for (let i = 0; i < stats.length; i++) {
+    localStorage.setItem(stats[i] + index, values[i]);
+  }
+};
+
+const loadPresetValues = (index) => {
+  console.log('Loading!');
+
+  const valueField = $('.value-bg');
+
+  const stats = getStats();
+
+  for (let i = 0; i < valueField.length; i++) {
+    console.log('Annie, are you alright?');
+    console.log(stats[i] + index);
+    const s = stats[i] + index;
+    const storedValue = localStorage.getItem(s);
+
+    $(valueField[i]).text(storedValue);
+    changeStats.adjustMod(i);
+  }
+  $('#points-left').text('0');
+};
+
+$('.preset-btn').each(function (index) {
+  let isSaved = false;
+
+  $(this).on('click', function (event) {
+    const pointsLeft = $('#points-left').text();
+    $(this).tooltip('hide');
+
+    if (pointsLeft == 0 && !isSaved) {
+      isSaved = true;
+      setPresetValues(this, index + 1);
+      return;
+    }
+
+    if (isSaved) {
+      loadPresetValues(index + 1);
+    }
+  });
 });

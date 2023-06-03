@@ -100,12 +100,12 @@ jQuery
 
 Web Storage
 
-- [ ] Leitura e escrita de dados simples - dados primivos como string, number, boolean
+- [x] Leitura e escrita de dados simples - dados primivos como string, number, boolean
 - [x] Leitura e escrita de JSON - dado transformado a partir de um objet
 - [x] Criar e atribuir um dado em um Cookie - opcionalmente, ler e apresentar o valor na tela
 
 Ajax com Backend
 
 - [x] Requisições AJAX para uma implementação funcional do backend em ExpressJS na plataforma Node
-- [ ] (Obrigatório) Requisições AJAX para uma API Fake - JSON Server
+- [x] (Obrigatório) Requisições AJAX para uma API Fake - JSON Server
 - [x] Requisições AJAX para uma API Rest pública qualquer (Busca CEP API ou IBGE API ou outra).
