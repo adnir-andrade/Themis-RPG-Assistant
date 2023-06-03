@@ -102,7 +102,7 @@ Web Storage
 
 - [ ] Leitura e escrita de dados simples - dados primivos como string, number, boolean
 - [x] Leitura e escrita de JSON - dado transformado a partir de um objet
-- [ ] Criar e atribuir um dado em um Cookie - opcionalmente, ler e apresentar o valor na tela
+- [x] Criar e atribuir um dado em um Cookie - opcionalmente, ler e apresentar o valor na tela
 
 Ajax com Backend
 

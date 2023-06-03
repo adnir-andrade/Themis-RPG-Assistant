@@ -98,29 +98,33 @@ jQuery
 	Uso de seletores CSS - id, classe e tag
 		// campaign-view-controller -> Fancy buttons com jQuery
 	Uso de seletores hierárquicos estáticos - ancestral/descendente, pai/filho, anterior/próximo
-		//
+		// select-campaign-controller -> Fancy buttons, mas selecionados de maneira diferente
 	Uso de seletores hierárquicos dinâmicos - parent/children/next
 		//	campaign-view-controller -> Fancy buttons com jQuery, encontrando "next" hidden-content
 	Efeitos fade ou slide
 		//	campaign-view-controller -> Fancy buttons, efeito de slide
 	Especificar o tratador de algum evento via jQuery
-		//
+		// character-creation-controler -> Usado no plugin para tratar evento de "on click"
 	Manipulação do CSS via função css() e addClass()/removeClass()
 		// campaign-view-controller -> Fancy buttons com jQuery
 	Manipulação do conteúdo de um input e div usando jQuery
-		// character-creation-controller -> Nome gerado aleatoriamente
+		// character-creation-controller -> Nome gerado aleatoriamente substitui input
 	Aplicar um plugin do jQuery (por exemplo, jQuery Mask Plugin)
-		//
+		// Usado nos modal de jQuery em select-campaign
 
 Web Storage
 
-	LocalStorage ou SessionStorage
-	Leitura e escrita de dados simples
-	Leitura e escrita de JSON
+Leitura e escrita de dados simples - dados primivos como string, number, boolean
+
+Leitura e escrita de JSON - dado transformado a partir de um object
+	// Utilizado no envio do formulario para o banco de dados
+Criar e atribuir um dado em um Cookie - opcionalmente, ler e apresentar o valor na tela
+	// Utilizado para salvar o e-mail em cookie (log-in)
 
 Ajax com Backend
 
 	Requisições AJAX para uma implementação funcional do backend em ExpressJS na plataforma Node
+		// Verificar com o professor se a implementacao do banco de dados e toda a magia negra que fiz conta
 	(Obrigatório) Requisições AJAX para uma API Fake - JSON Server 
 	Requisições AJAX para uma API Rest pública qualquer (Busca CEP API ou IBGE API ou outra).
 		// https://randomuser.me/documentation#format -> Nome gerado aleatoriamente em character-creation
