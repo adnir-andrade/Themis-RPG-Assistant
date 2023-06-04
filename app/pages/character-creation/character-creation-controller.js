@@ -98,7 +98,6 @@ submitButton.addEventListener('click', (event) => {
 
   const isValid = validateForms();
 
-  // submitCharacter();
   let characterSecondClass = null;
 
   let characterSecondClassLevel = null;

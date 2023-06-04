@@ -36,7 +36,7 @@ class CampaignManager {
       'themys-button-transp'
     );
 
-    const formatString = (originalString) => {
+    const formatString = function (originalString) {
       const lowerCaseString = originalString.toLowerCase();
 
       const firstLetter = lowerCaseString.slice(0, 1).toUpperCase();
@@ -50,13 +50,13 @@ class CampaignManager {
 
     newButton.textContent = formatString(name);
 
-    //TODO: Change to String Template for better practices
     (function appendElements(newButton, campaignContainer) {
-      const newDiv = document.createElement('div');
-
-      newDiv.classList.add('p-3');
-      newDiv.appendChild(newButton);
-      campaignContainer.appendChild(newDiv);
+      campaignContainer.insertAdjacentHTML(
+        'afterbegin',
+        `<div class="p-3">
+          ${newButton.outerHTML}
+        </div>`
+      );
     })(newButton, this.campaignContainer[0]);
   }
 

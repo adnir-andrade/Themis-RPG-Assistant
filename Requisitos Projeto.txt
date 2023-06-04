@@ -20,44 +20,75 @@ Funções
 	Função anônima sem argumento
 		// character-creation-controller -> $('#random-name').click(function ()
 	Função anônima com retorno
-		// Implementado em campaign-view para gerar nova posicao.
-	Função auto-executável - não será aceita a mesma do Module Pattern // Usada para colocar atalho na pagina de Character Creation
-	Função com nome // Varias funcoes em log-in & sign-in
-	Função aninhada/local - declarar uma função dentro de outra // Refatorado formatString para ser funcao aninhada de validacao (select Campaign).
-	Passagem de uma função como parâmetro para outra função - ambas as funções precisam ser implementadas pelo aluno // Character Creation, criando dinamicamente os niveis
-	Função Flecha - Arrow Function	// log-in & sign-in, e-mail validation
+		// select-campaign-controller -> const formatString = function (originalString)
+	Função auto-executável - não será aceita a mesma do Module Pattern
+		// first-screen-controller -> Auto-executable function that I need to refine
+	Função com nome
+		// second-screen-controller -> Varias
+	Função aninhada/local - declarar uma função dentro de outra
+		// select-campaign-controller -> updateButtonContent()
+	Passagem de uma função como parâmetro para outra função - ambas as funções precisam ser implementadas pelo aluno
+		// first-screen-controller -> function createOptions(firstValue, lastValue, selectDropdown, select) [selectDropdown is the callback]
+	Função Flecha - Arrow Function
+		// character-creation-controller -> Varias
 
 Eventos
-	Evento de carregamento do documento - onload // Adicionado no main / Character creation (switch)
-	Evento de movimento do mouse // Select.table - Nos botoes de utilidade
-	Evento de teclado - usar charCode ou keyCode // Character Creation. Arrow Key Up virou atalho para selecionar o campo para digitar o nome do personagem.
-	Eventos de formulário - usar onfocus e onblur  // Character Creation, ficou lindos
-	Imprimir alguma propriedade/atributo do objeto event recebido como parâmetro na função tratadora de evento // Dentro do init() das validacoes de sign-in e log-in.
+	Evento de carregamento do documento - onload
+		// main.html -> <body onload="showLogo()">
+	Evento de movimento do mouse
+		// campaign-view-controller -> fancy buttons
+	Evento de teclado - usar charCode ou keyCode
+		// first-screen-controller -> Auto-executable function that I need to refine
+	Eventos de formulário - usar onfocus e onblur 
+		// first-screen-controller -> Focus and Blur sexy events
+	Imprimir alguma propriedade/atributo do objeto event recebido como parâmetro na função tratadora de evento
+		// base-form-validator -> init() [commented]
 
 Acesso aos elementos DOM do HTML
-	Via referência DOM pelo id do elemento HTML - acesso sem uso do getElementByID ou querySelector, o id do objeto DOM é o próprio nome da variável // Feito em character-creation, 2nd level
-	Via getElementByID() // Usado ja no log-in & sign in
-	Via getElementsByName()	// Usado em select-table para selecionar o "table-holder", que comporta todos os botoes.
-	Via getElementsByTagName() // Usado no main, para a logo.
-	Via seletores CSS usados na função querySelector() ou querySelectorAll()	// Select.table - Nos botoes de utilidade
+	Via referência DOM pelo id do elemento HTML - acesso sem uso do getElementByID ou querySelector, o id do objeto DOM é o próprio nome da variável
+		// first-screen-controller -> thisIsTotallyNotRecommended
+	Via getElementByID()
+		// second-screen-controller -> Varias
+	Via getElementsByName()
+		// select-campaign-controller -> document.getElementsByName('table-holder')
+	Via getElementsByTagName()
+		// main-controller -> document.getElementsByTagName("img")[0]
+	Via seletores CSS usados na função querySelector() ou querySelectorAll()
+		// select-campaign-controller -> updateButtonContent()
 
 Tratadores de Evento
-	Especificar o tratador de evento inline - registro do evento no HTML // Acho que ta certo? No Main, os dois botoes.
-	Especificar o tratador de evento no modo tradicional - registro do evento no JS com prefixo on via atributo de um objeto DOM // Implementado no main
-	Especificar o tratador de evento com a função addEventListener - registro do evento no JS // Implementado em Character Creation, o listener do switch
-	Usar o operador this em funções tratadoras de eventos. // Varios lugares, principalmente na heranca, mas tambem no switch de character creation
+	Especificar o tratador de evento inline - registro do evento no HTML
+		// main.html -> onclick="window.location.href='/sign-in';"
+	Especificar o tratador de evento no modo tradicional - registro do evento no JS com prefixo on via atributo de um objeto DOM
+		// character-creation.html -> <form id="name-form" onsubmit="return changeFocus(event)">
+	Especificar o tratador de evento com a função addEventListener - registro do evento no JS
+		// character-creation-controller -> submitButton.addEventListener('click', (event))
+	Usar o operador this em funções tratadoras de eventos.
+		// first-screen-controller -> multiclassFields[i].disabled = !this.checked;
 
 Objetos Nativos
-	Usar pelo menos 3 métodos de manipulação de array // 1 - Organizado em ordem alfabetica (character-creation, races) && 2 - Adicionando um membro com push (select-campaign) && slice (que foi escolhido no local do outro metodo de manipulacao de string
-	Usar laço de repetição (for..in ou for..of ou forEach) // Select.table - Nos botoes de utilidade
-	Usar pelo menos 3 métodos para manipulação de string // No formatString usado para estilizar os titulos eh utilizado toLowerCase(), toUpperCase(), () e concat()
-	String Template - a String com crase e ${} // Implementado na campaign-selection
-	Manipulação do CSS de forma nativa via atributo style e classList // Select.table - Botoes de utilidade
+	Usar pelo menos 3 métodos de manipulação de array
+		// 1 - first-screen-controller -> Sorting alphabetically 
+		// 2 - select-campaign-controller -> pushCampaing(campaignName)
+		// 3 - select-campaign-controller -> updateButtonContent (slice) (escolhido no lugar de outro metodo de manipulacao de string para cumprir requisito)
+	Usar laço de repetição (for..in ou for..of ou forEach)
+		// second-screen-controller -> Varias
+	Usar pelo menos 3 métodos para manipulação de string
+		// 1 - select-campaign-controller -> updateButtonContent() || toLowerCase()
+		// 2 - select-campaign-controller -> updateButtonContent() || toUpperCase()
+		// 3 - select-campaign-controller -> updateButtonContent() || concat()
+	String Template - a String com crase e ${}
+		// select-campaign-controller -> appendElements()
+	Manipulação do CSS de forma nativa via atributo style e classList
+		// select-campaign-controller -> Utility buttons, refactored
 
 Objetos
-	Criar objeto usando função construtora ou notação literal // Utilizado nas classes de log-in e sign-in
-	(Obrigatório) Criar objetos a partir da definição de classes do ES6 - a classe precisa ser definida em arquivo separado, sendo o nome do arquivo em letras minúsculas no estilo dashed-case e nome da classe em UpperCamelCase //  Utilizado nas classes de log-in e sign-in
-	Usar herança prototipal nativa ou herança de classes do ES6	// Utilizado nas classes de log-in e sign-in
+	Criar objeto usando função construtora ou notação literal
+		// character-creation-controller -> Character Object
+	(Obrigatório) Criar objetos a partir da definição de classes do ES6 - a classe precisa ser definida em arquivo separado, sendo o nome do arquivo em letras minúsculas no estilo dashed-case e nome da classe em UpperCamelCase
+		// character.js -> Inteiro
+	Usar herança prototipal nativa ou herança de classes do ES6
+		// base-form-validator || log-in-validator || sign-in-validator
 	
 	
 ____________________________________________________________________________________________
