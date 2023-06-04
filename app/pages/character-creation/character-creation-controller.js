@@ -167,7 +167,7 @@ const requestRandomName = () => {
   });
 };
 
-const changeName = (firstName, lastName) => {
+const changeName = function (firstName, lastName) {
   $('#character-name').val(firstName + ' ' + lastName);
 };
 

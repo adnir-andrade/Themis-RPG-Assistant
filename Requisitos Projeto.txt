@@ -1,18 +1,26 @@
 *** Primeira etapa ***
 
 Caixas de Diálogo
-	prompt	//	Select.table - Criacao de campanha
-	alert	// sign-in & log-in // password & email validation
-	confirm	// Select.table - Criacao de campanha
+	prompt	
+		//	select-campaign-controller -> requestName()
+	alert
+		// log-in | base-form-validator -> Email validation
+	confirm
+		// select-campaign-controller -> requestName()
 
 Temporizadores
-	setInterval / Usada no logo
-	setTimeout // Usada tambem na logo porque foi o unico lugar que funcionou, meu deus que diabo
+	setInterval
+		// main-controller -> showLogo()
+	setTimeout
+		// main-controller -> showLogo()
 
 Funções
-	Função anônima com argumento // Character creation, organizando as races, tambem usada na main em conjunto com o timeout
-	Função anônima sem argumento // Varios eventListeners usam funcao anonima na sua declaracao - Usado em campaign-view-controller para pegar a posicao
-	Função anônima com retorno // Implementado em campaign-view para gerar nova posicao.
+	Função anônima com argumento
+		// character-creation-controller -> const changeName = function (firstName, lastName)
+	Função anônima sem argumento
+		// character-creation-controller -> $('#random-name').click(function ()
+	Função anônima com retorno
+		// Implementado em campaign-view para gerar nova posicao.
 	Função auto-executável - não será aceita a mesma do Module Pattern // Usada para colocar atalho na pagina de Character Creation
 	Função com nome // Varias funcoes em log-in & sign-in
 	Função aninhada/local - declarar uma função dentro de outra // Refatorado formatString para ser funcao aninhada de validacao (select Campaign).

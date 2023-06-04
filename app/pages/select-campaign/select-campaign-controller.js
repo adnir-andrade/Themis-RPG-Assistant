@@ -1,22 +1,4 @@
 'use strict';
-// Util buttons fancy hover
-// const customButtons = document.querySelectorAll('.custom-button');
-
-// customButtons.forEach((button) => {
-//   button.addEventListener('mouseover', () => {
-//     button.style.mixBlendMode = 'overlay';
-//     button.style.background =
-//       'radial-gradient(circle at center, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%)';
-//   });
-// });
-
-// customButtons.forEach((button) => {
-//   button.addEventListener('mouseout', () => {
-//     button.style.mixBlendMode = '';
-//     button.style.background = '';
-//   });
-// });
-
 // Adding a new table
 class CampaignManager {
   constructor() {
@@ -126,7 +108,6 @@ const campaignManager = new CampaignManager();
 
 campaignManager.init();
 
-//TODO: Fix the bug where lightbox is opening by itself
 $('div#option-buttons > button').each(function () {
   $(this).on('mouseover', () => {
     $(this).css({
