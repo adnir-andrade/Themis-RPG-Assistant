@@ -33,7 +33,8 @@ class CampaignManager {
       'btn',
       'btn-dark',
       'themys-button',
-      'themys-button-transp'
+      'themys-button-transp',
+      'campaign-button'
     );
 
     const formatString = function (originalString) {
@@ -49,6 +50,9 @@ class CampaignManager {
     };
 
     newButton.textContent = formatString(name);
+    newButton.addEventListener('click', function () {
+      console.log('campaign');
+    });
 
     (function appendElements(newButton, campaignContainer) {
       campaignContainer.insertAdjacentHTML(
@@ -57,6 +61,12 @@ class CampaignManager {
           ${newButton.outerHTML}
         </div>`
       );
+
+      const campaignButton = $('div > div > button:first');
+      campaignButton[0].addEventListener('click', function () {
+        const url = 'campaign-view?name=' + this.textContent.toLowerCase();
+        window.location.href = url;
+      });
     })(newButton, this.campaignContainer[0]);
   }
 
