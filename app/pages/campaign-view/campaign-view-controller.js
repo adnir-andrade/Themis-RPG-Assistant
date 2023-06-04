@@ -29,3 +29,14 @@ $('.custom-button').each(function () {
     });
   });
 });
+
+$(function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const campaignName = urlParams.get('name');
+  $('.title').text(campaignName);
+});
+
+$('#add').on('click', () => {
+  const url = '/character-creation';
+  window.location.href = url;
+});
