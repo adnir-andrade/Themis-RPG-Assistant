@@ -104,7 +104,7 @@ Qualidade do código
 	Usar Module Pattern com função auto-executável ou o conceito de módulo do ES6 com operadores export e import
 		// second-screen-controller -> changeStats
 	Usar pasta assets e subpastas resources e libraries para organizar o código
-		// Alterado, verificar com professor
+		// Aplicado
 	Usar let ou const ao invés de var
 		// Utilizado
 	Nomes de arquivos HTML, JS e CSS minúsculos e separados por hífen (dashed-case)
@@ -112,28 +112,27 @@ Qualidade do código
 	
 Formulário
 	Validação de formulário com onsubmit usando os métodos tradicionais - é a fase executada após a validação via HTML5
-		// Utilizado em character-creation.html e character-creation-controller.js (<form id="name-form" onsubmit="return changeFocus(event)">)
+		// character-creation.html e character-creation-controller.js (<form id="name-form" onsubmit="return changeFocus(event)">)
 	Validação de formulário com HTML5 API
-		// Log-in & Sign-In
+			// log-in.html || sign-In.html
 		Customizar as mensagens nos balões de mensagem
-			// Log-in & Sign-in, sign-in-validator.js
+			// sign-in-validator -> validateForm()
 		Usar os atributos de validação dos inputs - required ou type="email" ou outros
-			// Log-in & Sign-in
+			// log-in.html || sign-in.html
 		Usar expressões regulares para validação - usar no atributo pattern do respectivo input 
-			// Sign-in
+			// sign-in.html
 	Ler e escrever em elementos input com a propriedade value
-		// Sign-in, sign-in-validator.js, para apagar a senha e exibir erro.
+		// sign-in-validator.js -> validateForm()
 	Alterar o conteúdo de elementos div ou p com a propriedade innerHTML ou textContent
-		// Character-creation e select-campaign
+		// second-screen-controller -> Varias
 	Manipulação de elemento de listagem, como checkbox, radio ou select
-		// Character-creation, switch de multi-class
+		// first-screen-controller -> Switch multiclass
 	Acesso aos elementos de um formulário via hierarquia (caminho) de objetos, ou seja, array forms e elements
-		// sign-in-validator, character-creation
+		// sign-in-validator || character-creation
 ____________________________________________________________________________________________
 *** Terceira Etapa ***
 
 jQuery
-
 	Uso de seletores CSS - id, classe e tag
 		// campaign-view-controller -> Fancy buttons com jQuery
 	Uso de seletores hierárquicos estáticos - ancestral/descendente, pai/filho, anterior/próximo
@@ -149,21 +148,21 @@ jQuery
 	Manipulação do conteúdo de um input e div usando jQuery
 		// character-creation-controller -> Nome gerado aleatoriamente substitui input
 	Aplicar um plugin do jQuery (por exemplo, jQuery Mask Plugin)
-		// Usado nos modal de jQuery em select-campaign
+		// select-campaign-controller -> jQuery Modal
 
 Web Storage
-
 Leitura e escrita de dados simples - dados primivos como string, number, boolean
-
+	// second-screen-controller -> Preset buttons
 Leitura e escrita de JSON - dado transformado a partir de um object
-	// Utilizado no envio do formulario para o banco de dados
+	// character-creation-controller -> Utilizado no envio do formulario para o banco de dados
 Criar e atribuir um dado em um Cookie - opcionalmente, ler e apresentar o valor na tela
-	// Utilizado para salvar o e-mail em cookie (log-in)
+	// base-form-validator -> Utilizado para salvar o e-mail em cookie (log-in)
+	// select-campaign-controller -> Utilizado para mudar o placeholder de Search com o e-mail
 
 Ajax com Backend
-
 	Requisições AJAX para uma implementação funcional do backend em ExpressJS na plataforma Node
-		// Verificar com o professor se a implementacao do banco de dados e toda a magia negra que fiz conta
-	(Obrigatório) Requisições AJAX para uma API Fake - JSON Server 
+		// second-screen-controller -> My personal nightmare
+	(Obrigatório) Requisições AJAX para uma API Fake - JSON Server
+		// second-screen-controller -> Requisicao para uma API Real haha Eu me odeio eu acho
 	Requisições AJAX para uma API Rest pública qualquer (Busca CEP API ou IBGE API ou outra).
-		// https://randomuser.me/documentation#format -> Nome gerado aleatoriamente em character-creation
+		// character-creation-controller -> requestRandomName https://randomuser.me/documentation#format

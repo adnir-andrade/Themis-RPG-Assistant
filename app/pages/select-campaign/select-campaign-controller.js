@@ -126,3 +126,6 @@ $('div#option-buttons > button').each(function () {
     });
   });
 });
+
+const cookiedEmail = document.cookie;
+$('.form-control').attr('placeholder', cookiedEmail);
