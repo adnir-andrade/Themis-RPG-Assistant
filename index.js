@@ -26,18 +26,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(
-  '/resources/css',
-  express.static(path.join(__dirname, 'resources', 'css'))
+  '/assets/resources/css',
+  express.static(path.join(__dirname, 'assets', 'resources', 'css'))
 );
 
 app.use(
-  '/resources/icons',
-  express.static(path.join(__dirname, 'resources', 'icons'))
+  '/assets/resources/icons',
+  express.static(path.join(__dirname, 'assets', 'resources', 'icons'))
 );
 
 app.use(
-  '/resources/images',
-  express.static(path.join(__dirname, 'resources', 'images'))
+  '/assets/resources/images',
+  express.static(path.join(__dirname, 'assets', 'resources', 'images'))
 );
 
 app.use('/util', express.static(path.join(__dirname, 'app', 'pages', 'util')));

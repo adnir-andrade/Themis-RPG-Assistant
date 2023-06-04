@@ -2,7 +2,7 @@
 body {
   /* Background */
 
-  background: url(/resources/images/wallpaper-1.jpg);
+  background: url(/assets/resources/images/wallpaper-1.jpg);
   background-size: cover;
 
   font-family: 'Cinzel Decorative', cursive;
@@ -256,7 +256,7 @@ table {
 }
 
 .value-bg {
-  background: url(/resources/icons/value-square.svg);
+  background: url(/assets/resources/icons/value-square.svg);
   background-size: cover;
   background-position: center;
   display: inline-block;
@@ -279,7 +279,7 @@ table {
 }
 
 #points-left {
-  background: url(/resources/icons/points-left-square.svg);
+  background: url(/assets/resources/icons/points-left-square.svg);
   background-size: cover;
   background-position: center;
   border-radius: 20%;

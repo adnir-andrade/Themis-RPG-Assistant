@@ -80,7 +80,6 @@ const changeStats = (function () {
       valueSquares[i].textContent = randomNumber;
       adjustMod(i);
     }
-    console.log(pointsPool);
     pointsLeft.textContent = 0;
   };
 
@@ -168,15 +167,11 @@ const setPresetValues = (button, index) => {
 };
 
 const loadPresetValues = (index) => {
-  console.log('Loading!');
-
   const valueField = $('.value-bg');
 
   const stats = getStats();
 
   for (let i = 0; i < valueField.length; i++) {
-    console.log('Annie, are you alright?');
-    console.log(stats[i] + index);
     const s = stats[i] + index;
     const storedValue = localStorage.getItem(s);
 
