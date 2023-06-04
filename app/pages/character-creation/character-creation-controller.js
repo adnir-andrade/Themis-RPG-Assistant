@@ -16,7 +16,7 @@ const characterCreation = (function () {
     return nameForm.elements.username.value;
   };
 
-  const getStats = () => {
+  const getValues = () => {
     const valueSquares = document.getElementsByClassName('value-bg');
 
     const characterStatsValue = new Array();
@@ -24,6 +24,8 @@ const characterCreation = (function () {
     for (let i = 0; i < valueSquares.length; i++) {
       characterStatsValue.push(parseInt(valueSquares[i].textContent));
     }
+
+    return characterStatsValue;
   };
 
   const getCharacterLevel = () => {
@@ -77,13 +79,12 @@ const characterCreation = (function () {
     isMulticlass: isMulticlass,
     getCharacterSecondClass: getCharacterSecondClass,
     getCharacterSecondClassLevel: getCharacterSecondClassLevel,
-    getStatsValues: getStats,
+    getValues: getValues,
   };
 })();
 
 const validateForms = () => {
   const nameForm = document.getElementById('name-form');
-  console.log(nameForm.elements[0].value);
   if (nameForm.elements[0].value === '') {
     console.log('Name is empty!');
     return false;
@@ -107,7 +108,7 @@ submitButton.addEventListener('click', (event) => {
     characterSecondClassLevel =
       characterCreation.getCharacterSecondClassLevel();
   }
-  characterCreation.getStatsValues();
+  characterCreation.getValues();
 
   const character = {
     name: characterCreation.getName(),

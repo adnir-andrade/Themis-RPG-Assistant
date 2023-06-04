@@ -96,13 +96,13 @@ ________________________________________________________________________________
 
 Qualidade do código
 	Usar um Style Guide - apresentar o uso de pelo menos 10 regras do style escolhido (sugerido AirBnb)
-		// Utilizado, documentado em txt
+		// Documentado em txt
 	Usar um Lint - corrigir todos os problemas informados pelo lint (sugerido JSHint - usar o arquivo .jshintrc disponível no moodle)
-		// Utilizado, documentado em txt
+		// Documentado em txt
 	Usar strict mode - em todos os arquivos
 		// Utilizado em todos os arquivos
 	Usar Module Pattern com função auto-executável ou o conceito de módulo do ES6 com operadores export e import
-		// Utilizado em second-screen-controller.js
+		// second-screen-controller -> changeStats
 	Usar pasta assets e subpastas resources e libraries para organizar o código
 		// Alterado, verificar com professor
 	Usar let ou const ao invés de var
