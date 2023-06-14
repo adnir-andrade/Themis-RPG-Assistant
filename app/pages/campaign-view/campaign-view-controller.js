@@ -50,12 +50,19 @@ const characterScreen = $('#character-screen');
 
 $(function () {
   console.log('Loading characters...');
-  characters.forEach((character) => {
+  for (let i = 0; i < characters.length; i++) {
+    if (i % 2 === 0) {
+      characterScreen[0].insertAdjacentHTML(
+        'beforeend',
+        `<div class="w-100"></div>`
+      );
+    }
+
     characterScreen[0].insertAdjacentHTML(
       'beforeend',
       `<div class="p-3 col-md-4 justify-content-center character-container">
       <button  type="submit"  class="btn btn-dark themys-button themys-button-transp button-slider">
-      ${character}
+      ${characters[i]}
       </button>
       <div class="hidden-content">
       <p>Name: Haotran</p>
@@ -65,8 +72,8 @@ $(function () {
     </div>
       </div>`
     );
-    console.log(character);
-  });
+    console.log(characters[i]);
+  }
 
   $('.hidden-content').hide();
 });
