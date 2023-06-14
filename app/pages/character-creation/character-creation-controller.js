@@ -149,6 +149,7 @@ const addCharacter = (character) => {
   });
 
   characters.push(character);
+  window.location.href = '/campaign-view';
 };
 
 // jQuery Plugin

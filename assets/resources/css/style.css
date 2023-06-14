@@ -62,8 +62,8 @@ nav {
 
   font-style: normal;
   font-weight: 700;
-  font-size: 28px;
-  line-height: 14px;
+  font-size: 4vmin;
+  line-height: 1.2em;
 
   text-align: center;
 
@@ -367,4 +367,8 @@ button {
 
 .hidden-organization {
   display: inline-grid;
+}
+
+.hidden-content {
+  color: white;
 }

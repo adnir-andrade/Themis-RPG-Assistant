@@ -20,7 +20,7 @@ const seedDb = async () => {
   await Character.deleteMany({});
 };
 
-// seedDb();
+//seedDb();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
