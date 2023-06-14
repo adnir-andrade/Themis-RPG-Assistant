@@ -45,10 +45,33 @@ $('#add').on('click', () => {
 });
 
 // Testing reading from database:
-const characters = ['Char 1', 'Char 2', 'Char 3!'];
-const characterScreen = $('#character-screen');
 
-$(function () {
+const getCharacters = () => {
+  console.log('Getting characters...');
+
+  return new Promise((resolve, reject) => {
+    $.ajax({
+      url: '/recover-characters',
+      method: 'GET',
+      success: function (response) {
+        console.log(response);
+        resolve(response);
+      },
+      error: function (error) {
+        console.error(error);
+        reject(new Error('Error retrieving characters'));
+      },
+    });
+  });
+};
+
+$(async function () {
+  let characters = ['Char 1', 'Char 2', 'Char 3!'];
+
+  const characterScreen = $('#character-screen');
+
+  characters = await getCharacters();
+
   console.log('Loading characters...');
   for (let i = 0; i < characters.length; i++) {
     if (i % 2 === 0) {
@@ -62,17 +85,17 @@ $(function () {
       'beforeend',
       `<div class="p-3 col-md-4 justify-content-center character-container">
       <button  type="submit"  class="btn btn-dark themys-button themys-button-transp button-slider">
-      ${characters[i]}
+      ${characters[i].name}
       </button>
       <div class="hidden-content">
-      <p>Name: Haotran</p>
-      <p>Level: 12</p>
-      <p>Class: Assassin</p>
-      <p>Class Lvl: 12</p>
+      <p>Name: ${characters[i].name}</p>
+      <p>Level: ${characters[i].characterLevel}</p>
+      <p>Class: ${characters[i].baseClass}</p>
+      <p>Class Lvl: ${characters[i].baseClassLevel}</p>
     </div>
       </div>`
     );
-    console.log(characters[i]);
+    console.log(characters[i].name);
   }
 
   $('.hidden-content').hide();

@@ -108,3 +108,13 @@ app.post('/store-character', async (req, res) => {
 app.listen(7777, () => {
   console.log('listening on port 7777');
 });
+
+app.get('/recover-characters', async (req, res) => {
+  try {
+    const characters = await Character.find();
+    res.json(characters);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Error retrieving characters' });
+  }
+});
