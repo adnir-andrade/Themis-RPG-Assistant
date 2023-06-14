@@ -360,3 +360,7 @@ button {
 #random-name > img {
   width: 80%;
 }
+
+.character-container {
+  display: inline-flex;
+}
