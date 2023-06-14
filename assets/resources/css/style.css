@@ -364,3 +364,7 @@ button {
 .character-container {
   display: inline-flex;
 }
+
+.hidden-organization {
+  display: inline-grid;
+}

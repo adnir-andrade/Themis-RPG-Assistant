@@ -1,12 +1,15 @@
 'use strict';
 
-$('.hidden-content').hide();
-
-$('.button-slider').on('click', function () {
+$(document).on('click', '.button-slider', function () {
   if ($(this).next().is(':hidden')) {
     $(this).next().slideDown('slow');
+    $(this).parent().addClass('hidden-organization');
   } else {
-    $(this).next().slideUp('slow');
+    $(this)
+      .next()
+      .slideUp('slow', () => {
+        $(this).parent().removeClass('hidden-organization');
+      });
   }
 });
 
@@ -39,4 +42,31 @@ $(function () {
 $('#add').on('click', () => {
   const url = '/character-creation';
   window.location.href = url;
+});
+
+// Testing reading from database:
+const characters = ['Char 1', 'Char 2', 'Char 3!'];
+const characterScreen = $('#character-screen');
+
+$(function () {
+  console.log('Loading characters...');
+  characters.forEach((character) => {
+    characterScreen[0].insertAdjacentHTML(
+      'beforeend',
+      `<div class="p-3 col-md-4 justify-content-center character-container">
+      <button  type="submit"  class="btn btn-dark themys-button themys-button-transp button-slider">
+      ${character}
+      </button>
+      <div class="hidden-content">
+      <p>Name: Haotran</p>
+      <p>Level: 12</p>
+      <p>Class: Assassin</p>
+      <p>Class Lvl: 12</p>
+    </div>
+      </div>`
+    );
+    console.log(character);
+  });
+
+  $('.hidden-content').hide();
 });
